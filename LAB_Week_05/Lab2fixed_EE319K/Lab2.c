@@ -4,8 +4,8 @@
 // Last Modified: 12/31/2022 
 #include "Lab2.h"
 // Put your name and EID in the next two lines
-char Name[] = "JongHoon Shin";
-char EID[] = "2020311573";
+char Name[] = "JH";
+char EID[] = "1234567890";
 
 #include <stdint.h>
 
