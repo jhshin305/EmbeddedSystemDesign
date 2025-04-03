@@ -23,7 +23,7 @@ SYSCTL_RCGCGPIO_R  EQU 0x400FE608
        AREA    |.text|, CODE, READONLY, ALIGN=2
        THUMB
        EXPORT EID
-EID    DCB "2020311573",0  ;replace ABC123 with your EID
+EID    DCB "1234567890",0  ;replace ABC123 with your EID
        EXPORT RunGrader
       ALIGN 4
 RunGrader DCD 1 ; change to nonzero when ready for grading
