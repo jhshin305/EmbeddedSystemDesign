@@ -66,23 +66,12 @@ loop
    AND R2, R1, #0x01
    EOR R3, R2
    
-   CMP R3, #1
+   CMP R3, #0
    LDR R1, [R0]
    ORREQ R1, #0x20
    BICNE R1, #0x20
    STR R1,[R0]
-   bl DELAY
     B    loop
-	
-DELAY
-	mov r4, #0x100000
-_DELAY_LOOP
-	cmp r4, #0
-	bxeq lr
-	sub r4, #1
-	b _DELAY_LOOP
-_DELAY_LOOP_EXIT
-	bx lr
     
     ALIGN        ; make sure the end of this section is aligned
     END          ; end of file
