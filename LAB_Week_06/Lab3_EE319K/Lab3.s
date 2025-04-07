@@ -40,9 +40,9 @@ SYSCTL_RCGCGPIO_R  EQU 0x400FE608
        AREA    |.text|, CODE, READONLY, ALIGN=3
        THUMB
        EXPORT EID1
-EID1   DCB "2020311573",0  ;replace ABC123 with your EID
+EID1   DCB "1234567890",0  ;replace ABC123 with your EID
        EXPORT EID2
-EID2   DCB "2020311573",0  ;replace ABC123 with your EID
+EID2   DCB "1234567890",0  ;replace ABC123 with your EID
        ALIGN 4
 
      EXPORT  Start
