@@ -40,9 +40,9 @@ SYSCTL_RCGCGPIO_R  EQU 0x400FE608
        AREA    |.text|, CODE, READONLY, ALIGN=3
        THUMB
        EXPORT EID1
-EID1   DCB "2020311573",0  ;replace ABC123 with your EID
+EID1   DCB "1234567890",0  ;replace ABC123 with your EID
        EXPORT EID2
-EID2   DCB "2020311573",0  ;replace ABC123 with your EID
+EID2   DCB "1234567890",0  ;replace ABC123 with your EID
        ALIGN 4
 
      EXPORT  Start
@@ -52,6 +52,7 @@ Start
      MOV R0,#2  ;0 for TExaS oscilloscope, 1 for PORTE logic analyzer, 2 for Lab3 grader, 3 for none
      BL  TExaS_Init ;enables interrupts, prints the pin selections based on EID1 EID2
  ; Your Initialization goes here
+<<<<<<< HEAD
        LDR R0, =SYSCTL_RCGCGPIO_R
        LDR R1, [R0]
        ORR R1, #0x10  
@@ -72,7 +73,108 @@ Start
 loop  
 ; main engine goes here
        
+=======
+       LDR R0,=SYSCTL_RCGCGPIO_R
+       LDR R1,[R0]
+       ORR R1,#0x10
+       STR R1,[R0]
+	   NOP
+	   NOP
+       LDR R0,=GPIO_PORTE_DEN_R
+       LDR R1,[R0]
+	   ORR R1,#0x15
+       ;ORR R1,#0x29
+       STR R1,[R0]
+       LDR R0,=GPIO_PORTE_DIR_R
+       LDR R1,[R0]
+       ORR R1,#0x10
+	   ;ORR R1,#0x20
+       BIC R1,#0x05
+	   ;BIC R1,#0x09
+       STR R1,[R0]
+       MOV R4,#1
+
+loop  
+; main engine goes here
+       ;push change button
+       LDR R0,=GPIO_PORTE_DATA_R
+       LDR R1,[R0]
+       ANDS R0,R1,#0x01
+	   MOVEQ R0, #0
+	   MOVNE R0, #1
+	   CMPNE R0, R7
+	   MOV R7, R0
+       ADDNE R4, #1
+       CMP R4,#5
+       MOVEQ R4, #0
+       ;culculate the duty cycle
+       MOV R3, R4
+	   MOV R0, #20
+       MUL R3, R0
+	   MOV R0, #10
+       ADD R3, R0
+	   MOV R0, #50000
+	   MUL R3, R0
+	   ANDS R0,R1, #0x04
+	   ;ANDS R0,R1, #0x08
+	   MOVEQ R8, #0
+	   MOVEQ R2, #50000
+       BLEQ BLINK
+	   MOVNE R2, #1000
+	   BLNE BREATHE
+
+>>>>>>> ab2b2ab97abc72cd41bbfc42029628c9f9dfa095
 	 B    loop
+
+BLINK 
+	   MOV R5, LR
+       BL _LED_ON
+       BL _DELAY
+	   MOV R0, #100
+	   MUL R2, R0
+       SUB R3, R2, R3
+       BL _LED_OFF
+       BL _DELAY
+       BX R5
+_LED_ON
+       LDR R0,=GPIO_PORTE_DATA_R
+       LDR R1,[R0]
+       ORR R1,#0x10
+	   ;ORR R1,#0x20
+       STR R1,[R0]
+       BX LR
+_LED_OFF
+       LDR R0,=GPIO_PORTE_DATA_R
+       LDR R1,[R0]
+       BIC R1,#0x10
+	   ;BIC R1,#0x20
+       STR R1,[R0]
+       BX LR
+_DELAY
+	   MOV R6, LR
+       MOV R0, R3
+       BL _DELAY_LOOP
+       BX R6
+_DELAY_LOOP
+       NOP
+       NOP
+       NOP
+       NOP
+       SUBS R0,#1
+       BNE _DELAY_LOOP
+       BX LR
+	   
+BREATHE
+	   MOV R9, LR
+	   LDR R7, =SinTable
+	   LDRH R3, [R7, R8, LSL #1]
+	   MOV R0, #10
+	   MUL R3, R0
+	   BL BLINK
+	   ADD R8, #1
+	   CMP R8, #100
+	   MOVEQ R8, #0
+	   BX R9
      
    ALIGN 4   
 ; 256 points with values from 100 to 9900      
