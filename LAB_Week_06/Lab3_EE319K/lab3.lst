@@ -74,16 +74,16 @@ ARM Macro Assembler    Page 2
 3
    41 00000000                 THUMB
    42 00000000                 EXPORT           EID1
-   43 00000000 31 32 33 
-              34 35 36 
-              37 38 39 
-              30 00    EID1    DCB              "1234567890",0 ;replace ABC123 
+   43 00000000 32 30 32 
+              30 33 31 
+              31 35 37 
+              33 00    EID1    DCB              "2020311573",0 ;replace ABC123 
                                                             with your EID
    44 0000000B                 EXPORT           EID2
-   45 0000000B 31 32 33 
-              34 35 36 
-              37 38 39 
-              30 00    EID2    DCB              "1234567890",0 ;replace ABC123 
+   45 0000000B 32 30 32 
+              30 33 31 
+              31 35 37 
+              33 00    EID2    DCB              "2020311573",0 ;replace ABC123 
                                                             with your EID
    46 00000016 00 00           ALIGN            4
    47 00000018         
@@ -110,15 +110,15 @@ ARM Macro Assembler    Page 2
    60 0000002C BF00            NOP
    61 0000002E 48EB            LDR              R0,=GPIO_PORTE_DEN_R
    62 00000030 6801            LDR              R1,[R0]
-   63 00000032 F041 0115       ORR              R1,#0x15
-   64 00000036         ;ORR R1,#0x29
+   63 00000032         ;ORR R1,#0x15
+   64 00000032 F041 0129       ORR              R1,#0x29
    65 00000036 6001            STR              R1,[R0]
    66 00000038 48E9            LDR              R0,=GPIO_PORTE_DIR_R
    67 0000003A 6801            LDR              R1,[R0]
-   68 0000003C F041 0110       ORR              R1,#0x10
-   69 00000040         ;ORR R1,#0x20
-   70 00000040 F021 0105       BIC              R1,#0x05
-   71 00000044         ;BIC R1,#0x09
+   68 0000003C         ;ORR R1,#0x10
+   69 0000003C F041 0120       ORR              R1,#0x20
+   70 00000040         ;BIC R1,#0x05
+   71 00000040 F021 0109       BIC              R1,#0x09
    72 00000044 6001            STR              R1,[R0]
    73 00000046 F04F 0401       MOV              R4,#1
    74 0000004A         
@@ -149,8 +149,8 @@ ARM Macro Assembler    Page 3
    93 00000074 4403            ADD              R3, R0
    94 00000076 F24C 3050       MOV              R0, #50000
    95 0000007A FB03 F300       MUL              R3, R0
-   96 0000007E F011 0004       ANDS             R0,R1, #0x04
-   97 00000082         ;ANDS R0,R1, #0x08
+   96 0000007E         ;ANDS R0,R1, #0x04
+   97 0000007E F011 0008       ANDS             R0,R1, #0x08
    98 00000082 BF02 F04F 
               0800             MOVEQ            R8, #0
    99 00000088 F24C 3250       MOVEQ            R2, #50000
@@ -174,15 +174,15 @@ ARM Macro Assembler    Page 3
   116 000000BC         _LED_ON
   117 000000BC 48C9            LDR              R0,=GPIO_PORTE_DATA_R
   118 000000BE 6801            LDR              R1,[R0]
-  119 000000C0 F041 0110       ORR              R1,#0x10
-  120 000000C4         ;ORR R1,#0x20
+  119 000000C0         ;ORR R1,#0x10
+  120 000000C0 F041 0120       ORR              R1,#0x20
   121 000000C4 6001            STR              R1,[R0]
   122 000000C6 4770            BX               LR
   123 000000C8         _LED_OFF
   124 000000C8 48C6            LDR              R0,=GPIO_PORTE_DATA_R
   125 000000CA 6801            LDR              R1,[R0]
-  126 000000CC F021 0110       BIC              R1,#0x10
-  127 000000D0         ;BIC R1,#0x20
+  126 000000CC         ;BIC R1,#0x10
+  127 000000CC F021 0120       BIC              R1,#0x20
   128 000000D0 6001            STR              R1,[R0]
   129 000000D2 4770            BX               LR
   130 000000D4         _DELAY
@@ -539,11 +539,11 @@ ARM Macro Assembler    Page 9
               400243FC 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M4 --fpu=
-SoftVFP --depend=.\lab3.d -o.\lab3.o -I.\RTE\_Lab3 -IC:\Users\jhshin\AppData\Lo
-cal\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -IC:\Users\jhshin\AppData\Loca
-l\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --predefine="__EVAL SETA
- 1" --predefine="__UVISION_VERSION SETA 542" --predefine="TM4C123GH6PM SETA 1" 
---predefine="_RTE_ SETA 1" --list=.\lab3.lst Lab3.s
+SoftVFP --depend=.\lab3.d -o.\lab3.o -I.\RTE\_Lab3 -IC:\Users\jhshi\AppData\Loc
+al\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -IC:\Users\jhshi\AppData\Local\
+Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --predefine="__EVAL SETA 1
+" --predefine="__UVISION_VERSION SETA 542" --predefine="TM4C123GH6PM SETA 1" --
+predefine="_RTE_ SETA 1" --list=.\lab3.lst Lab3.s
 
 
 
