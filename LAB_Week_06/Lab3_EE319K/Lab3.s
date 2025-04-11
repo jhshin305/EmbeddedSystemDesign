@@ -52,11 +52,26 @@ Start
      MOV R0,#2  ;0 for TExaS oscilloscope, 1 for PORTE logic analyzer, 2 for Lab3 grader, 3 for none
      BL  TExaS_Init ;enables interrupts, prints the pin selections based on EID1 EID2
  ; Your Initialization goes here
-
+       LDR R0, =SYSCTL_RCGCGPIO_R
+       LDR R1, [R0]
+       ORR R1, #0x10  
+       STR R1, [R0]
+       NOP
+       NOP
+       LDR R0, =GPIO_PORTE_DEN_R
+       LDR R1, [R0]
+       ORR R1, #0x20  
+       ORR R1, #0x09
+       STR R1, [R0]
+       LDR R0, =GPIO_PORTE_DIR_R
+       LDR R1, [R0]
+       ORR R1, #0x20 
+       BIC R1, #0x09
+       STR R1, [R0]
 
 loop  
 ; main engine goes here
-
+       
 	 B    loop
      
    ALIGN 4   
