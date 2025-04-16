@@ -119,18 +119,78 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
-          <Key>Stepper_OUTPUT_SEL</Key>
+          <Key>DAC_OUTPUT_SEL</Key>
           <Name>3</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
-          <Key>Stepper_INPUT_SEL</Key>
+          <Key>DAC_INPUT_SEL</Key>
+          <Name>2</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>DAC_R5</Key>
+          <Name>0</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>DAC_R4</Key>
+          <Name>0</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>DAC_R3</Key>
+          <Name>0</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>DAC_R2</Key>
+          <Name>0</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>DAC_R1</Key>
+          <Name>0</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>DAC_R0</Key>
+          <Name>0</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>ADC_SIZE</Key>
+          <Name>1069547520</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>ADC_R2</Key>
+          <Name>1092616192</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>ADC_R</Key>
+          <Name>1065353216</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>ADC_INPUT</Key>
+          <Name>513</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>Stepper_OUTPUT_SEL</Key>
           <Name>1</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
+          <Key>Stepper_INPUT_SEL</Key>
+          <Name>3</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
           <Key>STEPPERSTEPSPERROT</Key>
-          <Name>1119092736</Name>
+          <Name>-2077682152</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -175,7 +235,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDARM</Key>
-          <Name>(1010=-1,-1,-1,-1,0)(1007=-1,-1,-1,-1,0)(1008=168,301,544,536,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(9108=-1,-1,-1,-1,0)(9106=-1,-1,-1,-1,0)(9104=-1,-1,-1,-1,0)(9107=-1,-1,-1,-1,0)(9109=1134,266,1557,547,1)(9102=962,566,1368,850,1)</Name>
+          <Name>(1010=-1,-1,-1,-1,0)(1007=-1,-1,-1,-1,0)(1008=168,301,544,536,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(9108=0,23,175,255,0)(9106=0,23,219,190,0)(9104=407,312,813,593,0)(9107=924,246,1387,527,0)(9109=1291,248,1714,529,1)(9102=962,566,1368,850,1)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -200,15 +260,17 @@
           <WinNumber>1</WinNumber>
           <ItemText>S</ItemText>
         </Ww>
-      </WatchWindow1>
-      <MemoryWindow1>
-        <Mm>
+        <Ww>
+          <count>2</count>
           <WinNumber>1</WinNumber>
-          <SubType>2</SubType>
-          <ItemText>DumpBuf</ItemText>
-          <AccSizeX>0</AccSizeX>
-        </Mm>
-      </MemoryWindow1>
+          <ItemText>input</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>currState</ItemText>
+        </Ww>
+      </WatchWindow1>
       <MemoryWindow2>
         <Mm>
           <WinNumber>2</WinNumber>
@@ -279,6 +341,10 @@
         <Entry>
           <Name>System Viewer\GPIOE</Name>
           <WinId>35904</WinId>
+        </Entry>
+        <Entry>
+          <Name>System Viewer\GPIOF</Name>
+          <WinId>35901</WinId>
         </Entry>
         <Entry>
           <Name>System Viewer\SYSCTL</Name>
