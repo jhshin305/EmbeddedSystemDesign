@@ -126,15 +126,15 @@ _LED_OFF
 _DELAY
        MOV R6, LR
        MOV R0, R3
-       BL _DELAY_LOOP
+       BL _DELAY_12500ps
        BX R6
-_DELAY_LOOP
+_DELAY_12500ps
        NOP
        NOP
        NOP
        NOP
        SUBS R0,#1
-       BNE _DELAY_LOOP
+       BNE _DELAY_12500ps
        BX LR
 	   
 BREATHE
