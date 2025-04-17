@@ -51,6 +51,7 @@ Start
 ; TExaS_Init sets bus clock at 80 MHz, interrupts, ADC1, TIMER3, TIMER5, and UART0
        MOV R0,#2  ;0 for TExaS oscilloscope, 1 for PORTE logic analyzer, 2 for Lab3 grader, 3 for none
        BL  TExaS_Init ;enables interrupts, prints the pin selections based on EID1 EID2
+
        ; Your Initialization goes here
        LDR R0,=SYSCTL_RCGCGPIO_R
        LDR R1,[R0]
@@ -90,6 +91,7 @@ loop
        ADD R3, R0
        MOV R0, #50000
        MUL R3, R0
+       ;push breathe button
        ANDS R0,R1, #0x08
        MOVEQ R8, #0
        MOVEQ R2, #50000
