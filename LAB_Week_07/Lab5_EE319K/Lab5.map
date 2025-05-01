@@ -14,9 +14,7 @@ Section Cross References
     lab5.o(.text.main) refers to debug.o(.text) for Debug_Init
     lab5.o(.text.main) refers to systick.o(.text.SysTick_Init) for SysTick_Init
     lab5.o(.text.main) refers to systick.o(.text.SysTick_Wait10ms) for SysTick_Wait10ms
-    lab5.o(.text.main) refers to lab5.o(.bss.currState) for currState
     lab5.o(.text.main) refers to lab5.o(.rodata.states) for states
-    lab5.o(.text.main) refers to lab5.o(.bss.input) for input
     lab5.o(.ARM.exidx.text.main) refers to lab5.o(.text.main) for [Anonymous Symbol]
     debug.o(.text) refers (Special) to lab5.o(.bss.DumpBuf1) for DumpBuf1
     debug.o(.text) refers (Special) to lab5.o(.bss.DumpBuf2) for DumpBuf2
@@ -280,25 +278,25 @@ Image Symbol Table
     [Anonymous Symbol]                       0x00000da8   Section        0  lab5grader.o(.text.TExaS_Init)
     [Anonymous Symbol]                       0x0000132c   Section        0  lab5grader.o(.text.Timer5A_Handler)
     [Anonymous Symbol]                       0x00001344   Section        0  lab5.o(.text.main)
-    i.PLL_Init                               0x0000142c   Section        0  pll.o(i.PLL_Init)
-    i.Timer3A_Handler                        0x000014a8   Section        0  timer3a.o(i.Timer3A_Handler)
-    i.Timer3A_Init                           0x000014c0   Section        0  timer3a.o(i.Timer3A_Init)
-    i.Timer3A_Stop                           0x00001520   Section        0  timer3a.o(i.Timer3A_Stop)
-    i.__scatterload_copy                     0x00001538   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00001546   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00001548   Section       14  handlers.o(i.__scatterload_zeroinit)
-    .L.str.5                                 0x00001b30   Data          34  lab5grader.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x00001b30   Section        0  lab5grader.o(.rodata.str1.1)
-    .L.str.6                                 0x00001b52   Data          34  lab5grader.o(.rodata.str1.1)
-    .L.str.7                                 0x00001b74   Data          16  lab5grader.o(.rodata.str1.1)
-    .L.str.21                                0x00001b84   Data          44  lab5grader.o(.rodata.str1.1)
-    .L.str.1                                 0x00001bb0   Data          26  lab5grader.o(.rodata.str1.1)
-    .L.str.4                                 0x00001bca   Data          50  lab5grader.o(.rodata.str1.1)
-    .L.str.8                                 0x00001bfc   Data          17  lab5grader.o(.rodata.str1.1)
-    .L.str.17                                0x00001c0d   Data          19  lab5grader.o(.rodata.str1.1)
-    .L.str.18                                0x00001c20   Data           7  lab5grader.o(.rodata.str1.1)
-    .L.str.19                                0x00001c27   Data           6  lab5grader.o(.rodata.str1.1)
-    .L.str.20                                0x00001c2d   Data           8  lab5grader.o(.rodata.str1.1)
+    i.PLL_Init                               0x00001408   Section        0  pll.o(i.PLL_Init)
+    i.Timer3A_Handler                        0x00001484   Section        0  timer3a.o(i.Timer3A_Handler)
+    i.Timer3A_Init                           0x0000149c   Section        0  timer3a.o(i.Timer3A_Init)
+    i.Timer3A_Stop                           0x000014fc   Section        0  timer3a.o(i.Timer3A_Stop)
+    i.__scatterload_copy                     0x00001514   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00001522   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00001524   Section       14  handlers.o(i.__scatterload_zeroinit)
+    .L.str.5                                 0x00001b0c   Data          34  lab5grader.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x00001b0c   Section        0  lab5grader.o(.rodata.str1.1)
+    .L.str.6                                 0x00001b2e   Data          34  lab5grader.o(.rodata.str1.1)
+    .L.str.7                                 0x00001b50   Data          16  lab5grader.o(.rodata.str1.1)
+    .L.str.21                                0x00001b60   Data          44  lab5grader.o(.rodata.str1.1)
+    .L.str.1                                 0x00001b8c   Data          26  lab5grader.o(.rodata.str1.1)
+    .L.str.4                                 0x00001ba6   Data          50  lab5grader.o(.rodata.str1.1)
+    .L.str.8                                 0x00001bd8   Data          17  lab5grader.o(.rodata.str1.1)
+    .L.str.17                                0x00001be9   Data          19  lab5grader.o(.rodata.str1.1)
+    .L.str.18                                0x00001bfc   Data           7  lab5grader.o(.rodata.str1.1)
+    .L.str.19                                0x00001c03   Data           6  lab5grader.o(.rodata.str1.1)
+    .L.str.20                                0x00001c09   Data           8  lab5grader.o(.rodata.str1.1)
     .data                                    0x20000000   Section       16  uart.o(.data)
     .data                                    0x20000010   Section        4  timer3a.o(.data)
     PortMode                                 0x2000002c   Data           4  lab5grader.o(.data.PortMode)
@@ -314,8 +312,8 @@ Image Symbol Table
     [Anonymous Symbol]                       0x200001dc   Section        0  lab5grader.o(.bss.Score)
     Time                                     0x200001e0   Data           4  lab5grader.o(.bss.Time)
     [Anonymous Symbol]                       0x200001e0   Section        0  lab5grader.o(.bss.Time)
-    StackMem                                 0x200001f0   Data           0  startup.o(STACK)
-    STACK                                    0x200001f0   Section     1024  startup.o(STACK)
+    StackMem                                 0x200001e8   Data           0  startup.o(STACK)
+    STACK                                    0x200001e8   Section     1024  startup.o(STACK)
 
     Global Symbols
 
@@ -497,23 +495,23 @@ Image Symbol Table
     SysTick_Wait10ms                         0x00000d6d   Thumb Code    58  systick.o(.text.SysTick_Wait10ms)
     TExaS_Init                               0x00000da9   Thumb Code  1380  lab5grader.o(.text.TExaS_Init)
     Timer5A_Handler                          0x0000132d   Thumb Code    24  lab5grader.o(.text.Timer5A_Handler)
-    main                                     0x00001345   Thumb Code   230  lab5.o(.text.main)
-    PLL_Init                                 0x0000142d   Thumb Code   120  pll.o(i.PLL_Init)
-    Timer3A_Handler                          0x000014a9   Thumb Code    16  timer3a.o(i.Timer3A_Handler)
-    Timer3A_Init                             0x000014c1   Thumb Code    74  timer3a.o(i.Timer3A_Init)
-    Timer3A_Stop                             0x00001521   Thumb Code    14  timer3a.o(i.Timer3A_Stop)
-    __scatterload_copy                       0x00001539   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00001547   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00001549   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    PatternProblem                           0x00001556   Data         200  lab5grader.o(.rodata.PatternProblem)
-    Patterns                                 0x00001620   Data          24  lab5grader.o(.rodata.Patterns)
-    PortProblem                              0x00001638   Data         640  lab5grader.o(.rodata.PortProblem)
-    pat                                      0x000018b8   Data         196  lab5grader.o(.rodata.pat)
-    ports                                    0x0000197c   Data         256  lab5grader.o(.rodata.ports)
-    states                                   0x00001a7c   Data         180  lab5.o(.rodata.states)
-    validPatterns                            0x00001c38   Data          28  lab5grader.o(.rodata.validPatterns)
-    Region$$Table$$Base                      0x00001c54   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00001c74   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x00001345   Thumb Code   196  lab5.o(.text.main)
+    PLL_Init                                 0x00001409   Thumb Code   120  pll.o(i.PLL_Init)
+    Timer3A_Handler                          0x00001485   Thumb Code    16  timer3a.o(i.Timer3A_Handler)
+    Timer3A_Init                             0x0000149d   Thumb Code    74  timer3a.o(i.Timer3A_Init)
+    Timer3A_Stop                             0x000014fd   Thumb Code    14  timer3a.o(i.Timer3A_Stop)
+    __scatterload_copy                       0x00001515   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00001523   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00001525   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    PatternProblem                           0x00001532   Data         200  lab5grader.o(.rodata.PatternProblem)
+    Patterns                                 0x000015fc   Data          24  lab5grader.o(.rodata.Patterns)
+    PortProblem                              0x00001614   Data         640  lab5grader.o(.rodata.PortProblem)
+    pat                                      0x00001894   Data         196  lab5grader.o(.rodata.pat)
+    ports                                    0x00001958   Data         256  lab5grader.o(.rodata.ports)
+    states                                   0x00001a58   Data         180  lab5.o(.rodata.states)
+    validPatterns                            0x00001c14   Data          28  lab5grader.o(.rodata.validPatterns)
+    Region$$Table$$Base                      0x00001c30   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00001c50   Number         0  anon$$obj.o(Region$$Table)
     RxPutI                                   0x20000000   Data           4  uart.o(.data)
     RxGetI                                   0x20000004   Data           4  uart.o(.data)
     TxPutI                                   0x20000008   Data           4  uart.o(.data)
@@ -533,9 +531,7 @@ Image Symbol Table
     NeedState                                0x200001d0   Data           4  lab5grader.o(.bss.NeedState)
     PeriodicTask2                            0x200001d8   Data           4  lab5grader.o(.bss.PeriodicTask2)
     WrongState                               0x200001e4   Data           4  lab5grader.o(.bss.WrongState)
-    currState                                0x200001e8   Data           1  lab5.o(.bss.currState)
-    input                                    0x200001e9   Data           1  lab5.o(.bss.input)
-    __initial_sp                             0x200005f0   Data           0  startup.o(STACK)
+    __initial_sp                             0x200005e8   Data           0  startup.o(STACK)
 
 
 
@@ -545,101 +541,97 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00001ca4, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00001c80, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001c74, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001c50, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000000   0x00000284   Code   RO            3  * RESET               startup.o
-    0x00000284   0x00000284   0x00000000   Code   RO          206  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x00000284   0x00000284   0x00000004   Code   RO          211    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x00000288   0x00000288   0x00000004   Code   RO          214    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x0000028c   0x0000028c   0x00000000   Code   RO          216    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x0000028c   0x0000028c   0x00000000   Code   RO          218    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x0000028c   0x0000028c   0x00000008   Code   RO          219    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x00000294   0x00000294   0x00000000   Code   RO          221    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x00000294   0x00000294   0x00000000   Code   RO          223    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x00000294   0x00000294   0x00000004   Code   RO          212    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x00000284   0x00000284   0x00000000   Code   RO          205  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x00000284   0x00000284   0x00000004   Code   RO          210    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x00000288   0x00000288   0x00000004   Code   RO          213    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x0000028c   0x0000028c   0x00000000   Code   RO          215    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x0000028c   0x0000028c   0x00000000   Code   RO          217    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x0000028c   0x0000028c   0x00000008   Code   RO          218    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x00000294   0x00000294   0x00000000   Code   RO          220    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x00000294   0x00000294   0x00000000   Code   RO          222    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x00000294   0x00000294   0x00000004   Code   RO          211    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x00000298   0x00000298   0x0000001c   Code   RO            4    .text               startup.o
-    0x000002b4   0x000002b4   0x00000010   Code   RO           29    .text               debug.o
-    0x000002c4   0x000002c4   0x0000043a   Code   RO           68    .text               uart.o
-    0x000006fe   0x000006fe   0x0000001a   Code   RO          209    .text               mc_w.l(memcmp.o)
-    0x00000718   0x00000718   0x00000030   Code   RO          225    .text               mc_w.l(init.o)
-    0x00000748   0x00000748   0x0000015c   Code   RO          153    .text.CheckInitialization  lab5grader.o
-    0x000008a4   0x000008a4   0x0000042c   Code   RO          171    .text.Lab5Grader    lab5grader.o
-    0x00000cd0   0x00000cd0   0x0000001c   Code   RO          123    .text.LogicAnalyzerA  lab5grader.o
-    0x00000cec   0x00000cec   0x0000001a   Code   RO          125    .text.LogicAnalyzerB  lab5grader.o
+    0x000002b4   0x000002b4   0x00000010   Code   RO           28    .text               debug.o
+    0x000002c4   0x000002c4   0x0000043a   Code   RO           67    .text               uart.o
+    0x000006fe   0x000006fe   0x0000001a   Code   RO          208    .text               mc_w.l(memcmp.o)
+    0x00000718   0x00000718   0x00000030   Code   RO          224    .text               mc_w.l(init.o)
+    0x00000748   0x00000748   0x0000015c   Code   RO          152    .text.CheckInitialization  lab5grader.o
+    0x000008a4   0x000008a4   0x0000042c   Code   RO          170    .text.Lab5Grader    lab5grader.o
+    0x00000cd0   0x00000cd0   0x0000001c   Code   RO          122    .text.LogicAnalyzerA  lab5grader.o
+    0x00000cec   0x00000cec   0x0000001a   Code   RO          124    .text.LogicAnalyzerB  lab5grader.o
     0x00000d06   0x00000d06   0x00000002   PAD
-    0x00000d08   0x00000d08   0x0000001c   Code   RO          127    .text.LogicAnalyzerC  lab5grader.o
-    0x00000d24   0x00000d24   0x0000001a   Code   RO          129    .text.LogicAnalyzerE  lab5grader.o
+    0x00000d08   0x00000d08   0x0000001c   Code   RO          126    .text.LogicAnalyzerC  lab5grader.o
+    0x00000d24   0x00000d24   0x0000001a   Code   RO          128    .text.LogicAnalyzerE  lab5grader.o
     0x00000d3e   0x00000d3e   0x00000002   PAD
-    0x00000d40   0x00000d40   0x00000018   Code   RO          121    .text.Scope         lab5grader.o
-    0x00000d58   0x00000d58   0x00000014   Code   RO           33    .text.SysTick_Init  systick.o
-    0x00000d6c   0x00000d6c   0x0000003a   Code   RO           37    .text.SysTick_Wait10ms  systick.o
+    0x00000d40   0x00000d40   0x00000018   Code   RO          120    .text.Scope         lab5grader.o
+    0x00000d58   0x00000d58   0x00000014   Code   RO           32    .text.SysTick_Init  systick.o
+    0x00000d6c   0x00000d6c   0x0000003a   Code   RO           36    .text.SysTick_Wait10ms  systick.o
     0x00000da6   0x00000da6   0x00000002   PAD
-    0x00000da8   0x00000da8   0x00000584   Code   RO          173    .text.TExaS_Init    lab5grader.o
-    0x0000132c   0x0000132c   0x00000018   Code   RO          133    .text.Timer5A_Handler  lab5grader.o
-    0x00001344   0x00001344   0x000000e6   Code   RO           13    .text.main          lab5.o
-    0x0000142a   0x0000142a   0x00000002   PAD
-    0x0000142c   0x0000142c   0x0000007c   Code   RO           46    i.PLL_Init          pll.o
-    0x000014a8   0x000014a8   0x00000018   Code   RO           93    i.Timer3A_Handler   timer3a.o
-    0x000014c0   0x000014c0   0x00000060   Code   RO           94    i.Timer3A_Init      timer3a.o
-    0x00001520   0x00001520   0x00000018   Code   RO           95    i.Timer3A_Stop      timer3a.o
-    0x00001538   0x00001538   0x0000000e   Code   RO          229    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00001546   0x00001546   0x00000002   Code   RO          230    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00001548   0x00001548   0x0000000e   Code   RO          231    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00001556   0x00001556   0x000000c8   Data   RO          182    .rodata.PatternProblem  lab5grader.o
-    0x0000161e   0x0000161e   0x00000002   PAD
-    0x00001620   0x00001620   0x00000018   Data   RO          183    .rodata.Patterns    lab5grader.o
-    0x00001638   0x00001638   0x00000280   Data   RO          179    .rodata.PortProblem  lab5grader.o
-    0x000018b8   0x000018b8   0x000000c4   Data   RO          184    .rodata.pat         lab5grader.o
-    0x0000197c   0x0000197c   0x00000100   Data   RO          178    .rodata.ports       lab5grader.o
-    0x00001a7c   0x00001a7c   0x000000b4   Data   RO           17    .rodata.states      lab5.o
-    0x00001b30   0x00001b30   0x00000105   Data   RO          186    .rodata.str1.1      lab5grader.o
-    0x00001c35   0x00001c35   0x00000003   PAD
-    0x00001c38   0x00001c38   0x0000001c   Data   RO          181    .rodata.validPatterns  lab5grader.o
-    0x00001c54   0x00001c54   0x00000020   Data   RO          228    Region$$Table       anon$$obj.o
+    0x00000da8   0x00000da8   0x00000584   Code   RO          172    .text.TExaS_Init    lab5grader.o
+    0x0000132c   0x0000132c   0x00000018   Code   RO          132    .text.Timer5A_Handler  lab5grader.o
+    0x00001344   0x00001344   0x000000c4   Code   RO           13    .text.main          lab5.o
+    0x00001408   0x00001408   0x0000007c   Code   RO           45    i.PLL_Init          pll.o
+    0x00001484   0x00001484   0x00000018   Code   RO           92    i.Timer3A_Handler   timer3a.o
+    0x0000149c   0x0000149c   0x00000060   Code   RO           93    i.Timer3A_Init      timer3a.o
+    0x000014fc   0x000014fc   0x00000018   Code   RO           94    i.Timer3A_Stop      timer3a.o
+    0x00001514   0x00001514   0x0000000e   Code   RO          228    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00001522   0x00001522   0x00000002   Code   RO          229    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00001524   0x00001524   0x0000000e   Code   RO          230    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00001532   0x00001532   0x000000c8   Data   RO          181    .rodata.PatternProblem  lab5grader.o
+    0x000015fa   0x000015fa   0x00000002   PAD
+    0x000015fc   0x000015fc   0x00000018   Data   RO          182    .rodata.Patterns    lab5grader.o
+    0x00001614   0x00001614   0x00000280   Data   RO          178    .rodata.PortProblem  lab5grader.o
+    0x00001894   0x00001894   0x000000c4   Data   RO          183    .rodata.pat         lab5grader.o
+    0x00001958   0x00001958   0x00000100   Data   RO          177    .rodata.ports       lab5grader.o
+    0x00001a58   0x00001a58   0x000000b4   Data   RO           17    .rodata.states      lab5.o
+    0x00001b0c   0x00001b0c   0x00000105   Data   RO          185    .rodata.str1.1      lab5grader.o
+    0x00001c11   0x00001c11   0x00000003   PAD
+    0x00001c14   0x00001c14   0x0000001c   Data   RO          180    .rodata.validPatterns  lab5grader.o
+    0x00001c30   0x00001c30   0x00000020   Data   RO          227    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00001c74, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x20000000   0x00001c74   0x00000010   Data   RW           70    .data               uart.o
-    0x20000010   0x00001c84   0x00000004   Data   RW           96    .data               timer3a.o
-    0x20000014   0x00001c88   0x0000000b   Data   RW           15    .data.EID1          lab5.o
-    0x2000001f   0x00001c93   0x0000000b   Data   RW           16    .data.EID2          lab5.o
-    0x2000002a   0x00001c9e   0x00000002   PAD
-    0x2000002c   0x00001ca0   0x00000004   Data   RW          180    .data.PortMode      lab5grader.o
-
-
-    Execution Region ER_ZI (Exec base: 0x20000030, Load base: 0x00001ca4, Size: 0x000005c0, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00001c50, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000030        -       0x00000080   Zero   RW           69    .bss                uart.o
-    0x200000b0        -       0x00000080   Zero   RW           20    .bss.DumpBuf1       lab5.o
-    0x20000130        -       0x00000080   Zero   RW           21    .bss.DumpBuf2       lab5.o
-    0x200001b0        -       0x00000004   Zero   RW           22    .bss.DumpIndex      lab5.o
-    0x200001b4        -       0x00000001   Zero   RW          185    .bss.Fail           lab5grader.o
-    0x200001b5   0x00001ca4   0x00000003   PAD
-    0x200001b8        -       0x00000004   Zero   RW          191    .bss.LastIn         lab5grader.o
-    0x200001bc        -       0x00000004   Zero   RW          192    .bss.LastOut        lab5grader.o
-    0x200001c0        -       0x00000004   Zero   RW          198    .bss.LastState      lab5grader.o
-    0x200001c4        -       0x00000004   Zero   RW          193    .bss.LookingFlag    lab5grader.o
-    0x200001c8        -       0x00000004   Zero   RW          195    .bss.LookingFor     lab5grader.o
-    0x200001cc        -       0x00000004   Zero   RW          188    .bss.M              lab5grader.o
-    0x200001d0        -       0x00000004   Zero   RW          196    .bss.NeedState      lab5grader.o
-    0x200001d4        -       0x00000004   Zero   RW          194    .bss.PatternMode    lab5grader.o
-    0x200001d8        -       0x00000004   Zero   RW          177    .bss.PeriodicTask2  lab5grader.o
-    0x200001dc        -       0x00000004   Zero   RW          187    .bss.Score          lab5grader.o
-    0x200001e0        -       0x00000004   Zero   RW          190    .bss.Time           lab5grader.o
-    0x200001e4        -       0x00000004   Zero   RW          197    .bss.WrongState     lab5grader.o
-    0x200001e8        -       0x00000001   Zero   RW           18    .bss.currState      lab5.o
-    0x200001e9        -       0x00000001   Zero   RW           19    .bss.input          lab5.o
-    0x200001ea   0x00001ca4   0x00000006   PAD
-    0x200001f0        -       0x00000400   Zero   RW            1    STACK               startup.o
+    0x20000000   0x00001c50   0x00000010   Data   RW           69    .data               uart.o
+    0x20000010   0x00001c60   0x00000004   Data   RW           95    .data               timer3a.o
+    0x20000014   0x00001c64   0x0000000b   Data   RW           15    .data.EID1          lab5.o
+    0x2000001f   0x00001c6f   0x0000000b   Data   RW           16    .data.EID2          lab5.o
+    0x2000002a   0x00001c7a   0x00000002   PAD
+    0x2000002c   0x00001c7c   0x00000004   Data   RW          179    .data.PortMode      lab5grader.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000030, Load base: 0x00001c80, Size: 0x000005b8, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000030        -       0x00000080   Zero   RW           68    .bss                uart.o
+    0x200000b0        -       0x00000080   Zero   RW           18    .bss.DumpBuf1       lab5.o
+    0x20000130        -       0x00000080   Zero   RW           19    .bss.DumpBuf2       lab5.o
+    0x200001b0        -       0x00000004   Zero   RW           20    .bss.DumpIndex      lab5.o
+    0x200001b4        -       0x00000001   Zero   RW          184    .bss.Fail           lab5grader.o
+    0x200001b5   0x00001c80   0x00000003   PAD
+    0x200001b8        -       0x00000004   Zero   RW          190    .bss.LastIn         lab5grader.o
+    0x200001bc        -       0x00000004   Zero   RW          191    .bss.LastOut        lab5grader.o
+    0x200001c0        -       0x00000004   Zero   RW          197    .bss.LastState      lab5grader.o
+    0x200001c4        -       0x00000004   Zero   RW          192    .bss.LookingFlag    lab5grader.o
+    0x200001c8        -       0x00000004   Zero   RW          194    .bss.LookingFor     lab5grader.o
+    0x200001cc        -       0x00000004   Zero   RW          187    .bss.M              lab5grader.o
+    0x200001d0        -       0x00000004   Zero   RW          195    .bss.NeedState      lab5grader.o
+    0x200001d4        -       0x00000004   Zero   RW          193    .bss.PatternMode    lab5grader.o
+    0x200001d8        -       0x00000004   Zero   RW          176    .bss.PeriodicTask2  lab5grader.o
+    0x200001dc        -       0x00000004   Zero   RW          186    .bss.Score          lab5grader.o
+    0x200001e0        -       0x00000004   Zero   RW          189    .bss.Time           lab5grader.o
+    0x200001e4        -       0x00000004   Zero   RW          196    .bss.WrongState     lab5grader.o
+    0x200001e8        -       0x00000400   Zero   RW            1    STACK               startup.o
 
 
 ==============================================================================
@@ -650,7 +642,7 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         16          4          0          0          0        256   debug.o
-       230          0        180         22        262       1295   lab5.o
+       196          0        180         22        260       1591   lab5.o
       2984        274       1605          4         49      12482   lab5grader.o
        124          4          0          0          0       4975   pll.o
        672        622          0          0       1024       1012   startup.o
@@ -659,9 +651,9 @@ Image component sizes
       1082         48          0         16        128       5424   uart.o
 
     ----------------------------------------------------------------------
-      5338        992       1822         48       1472      28525   Object Totals
+      5302        992       1822         48       1464      28821   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         8          0          5          2          9          0   (incl. Padding)
+         6          0          5          2          3          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -699,15 +691,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5462       1010       1822         48       1472      28577   Grand Totals
-      5462       1010       1822         48       1472      28577   ELF Image Totals
-      5462       1010       1822         48          0          0   ROM Totals
+      5426       1010       1822         48       1464      28873   Grand Totals
+      5426       1010       1822         48       1464      28873   ELF Image Totals
+      5426       1010       1822         48          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 7284 (   7.11kB)
-    Total RW  Size (RW Data + ZI Data)              1520 (   1.48kB)
-    Total ROM Size (Code + RO Data + RW Data)       7332 (   7.16kB)
+    Total RO  Size (Code + RO Data)                 7248 (   7.08kB)
+    Total RW  Size (RW Data + ZI Data)              1512 (   1.48kB)
+    Total ROM Size (Code + RO Data + RW Data)       7296 (   7.12kB)
 
 ==============================================================================
 

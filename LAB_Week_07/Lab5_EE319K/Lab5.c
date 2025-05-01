@@ -41,13 +41,6 @@ char EID2[] = "2020311573"; //  ;replace abc123 with your EID
 void DisableInterrupts(void);
 void EnableInterrupts(void);
 
-enum State {sG, sYw, sYW, wG, wYs, wYW, walkW, walkR1s, walkO1s, walkR2s, walkO2s, walkR1w, walkO1w, walkR2w, walkO2w, ASs, ASw, ASW};
-struct state {
-  uint8_t traffic;
-  uint8_t walk;
-  uint8_t next[8]; // next state for each input
-};
-
 #define S_RED 0x04
 #define S_YELLOW 0x02
 #define S_GREEN 0x01
@@ -58,9 +51,14 @@ struct state {
 #define WALK_WHITE 0x0E
 #define WALK_OFF 0x00
 
-// walk: GBRx
+enum State {sG, sYw, sYW, wG, wYs, wYW, walkW, walkR1s, walkO1s, walkR2s, walkO2s, walkR1w, walkO1w, walkR2w, walkO2w, ASs, ASw, ASW};
+struct state {
+  uint8_t traffic;
+  uint8_t walk;
+  uint8_t next[8]; // next state for each input
+};
+
 const struct state states[18] = {
-  // input:                       x, w, s, sw, W, wW, sW, swW
   {S_GREEN | W_RED, WALK_RED,   {sG, sYw, sG, sYw, sYW, sYW, sYW, sYW}},                                    // south green
   {S_YELLOW | W_RED, WALK_RED,  {ASw, ASw, ASw, ASw, ASw, ASw, ASw, ASw}},                                  // south yellow to west green
   {S_YELLOW | W_RED, WALK_RED,  {ASW, ASW, ASW, ASW, ASW, ASW, ASW, ASW}},                                  // south yellow to walk white
@@ -81,9 +79,6 @@ const struct state states[18] = {
   {S_RED | W_RED, WALK_RED,     {walkW, walkW, walkW, walkW, walkW, walkW, walkW, walkW}}   	              // all stop to walk white
 };
 
-uint8_t currState = sG;
-uint8_t input = 0;
-
 int main(void){ 
   DisableInterrupts();
   TExaS_Init(5);
@@ -103,9 +98,11 @@ int main(void){
   GPIO_PORTF_DATA_R = 0x00;
   
   // Specify initial atate
-	//uint8_t currState = sG;
+	uint8_t currState = sG;
+  uint8_t input = 0;
 
   EnableInterrupts(); // grader, scope, logic analyzer need interrupts
+
   while(1){
     // set traffic lights
     GPIO_PORTB_DATA_R = states[currState].traffic; // set traffic lights
@@ -121,6 +118,3 @@ int main(void){
     currState = states[currState].next[input]; // next state
   }
 }
-
-
-
