@@ -67,7 +67,7 @@ void Sound_Voice(const uint8_t *voice){
 void Sound_Off(void){
 	NVIC_ST_RELOAD_R = 0;
   DAC_Out(0); // turn off sound
-  i = 0; // reset index into SinWave
+//  i = 0; // reset index into SinWave
 }
 // **************Sound_GetVoice*********************
 // Read the current voice

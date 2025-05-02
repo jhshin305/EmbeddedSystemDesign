@@ -39,5 +39,6 @@ void DAC_Init(void){
 // Output: none
 void DAC_Out(uint32_t data){
   // used in Lab 6 and lab 10
+  //GPIO_PORTB_DATA_R = (GPIO_PORTB_DATA_R & ~0x0000003F) | data; // output to PB5-0
   GPIO_PORTB_DATA_R = data; // output to PB5-0
 }
