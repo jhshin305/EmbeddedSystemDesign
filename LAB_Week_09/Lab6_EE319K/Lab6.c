@@ -154,15 +154,15 @@ int staticmain(void){
 
 // Key0=277.2, Key1=349.2, Key2=415.3, Key3=466.2 Hz
 void GPIOPortA_Handler(void){ // called on PA5-2
-  uint32_t r = GPIO_PORTA_RIS_R; // read interrupt status
-  GPIO_PORTA_ICR_R = 0xff; // clear interrupt flag
-  if(r&0x04){ // Key0 pressed
+  uint32_t data = GPIO_PORTA_RIS_R; // read interrupt status
+  GPIO_PORTA_ICR_R = data; // clear interrupt flag
+  if(data&0x04){ // Key0 pressed
     Sound_Start(DF0); 
-  }else if(r&0x08){ // Key1 pressed
+  }else if(data&0x08){ // Key1 pressed
     Sound_Start(F0); 
-  }else if(r&0x10){ // Key2 pressed
+  }else if(data&0x10){ // Key2 pressed
     Sound_Start(AF0); 
-  }else if(r&0x20){ // Key3 pressed
+  }else if(data&0x20){ // Key3 pressed
     Sound_Start(BF0); 
   }else{
     Sound_Off(); // no key pressed, turn off sound
@@ -181,30 +181,14 @@ int main(void){
 //    SIMULATIONGRADER,
 //    NONE
   Key_Init();
-  DAC_Init(); // your lab 6 solution
+  DAC_Init();
   LaunchPad_Init(); // if needed
   Sound_Init();
   Song_Init(); // extra credit 1)
   Wave_Init(); // extra credit 2)
   EnableInterrupts();
-	
-	// SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOF; // activate clock for port A
-  // volatile uint32_t time = 6665;  // 1msec, tuned at 80 MHz
-  // while(time){
-  //   time--;
-  // }
-  // GPIO_PORTD_DIR_R |= 0xff; // make PA5-2 input (PA5-2 is keys)
-  // GPIO_PORTA_DEN_R |= 0xff;
-	
-	// SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOD; // activate clock for port A
-  // volatile uint32_t time = 6665;  // 1msec, tuned at 80 MHz
-  // while(time){
-  //   time--;
-  // }
-  // GPIO_PORTD_DIR_R &= ~0xff; // make PA5-2 input (PA5-2 is keys)
-  // GPIO_PORTA_DEN_R |= 0xff;
+  //Sound_Start(DF0);
 
-  // uint32_t i = 0;              
   while(1){        
     // uint64_t but = GPIO_PORTA_DATA_R;
     // if(but&0x04){ // Key0 pressed
