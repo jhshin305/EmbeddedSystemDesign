@@ -154,19 +154,19 @@ int staticmain(void){
 
 // Key0=277.2, Key1=349.2, Key2=415.3, Key3=466.2 Hz
 void GPIOPortA_Handler(void){ // called on PA5-2
-  uint32_t data = GPIO_PORTA_RIS_R; // read interrupt status
-  GPIO_PORTA_ICR_R = data; // clear interrupt flag
-  if(data&0x04){ // Key0 pressed
+  uint32_t inter = GPIO_PORTA_RIS_R; // read interrupt status
+  GPIO_PORTA_ICR_R = inter; // clear interrupt flag
+  if(inter&0x04){ // Key0 pressed
     Sound_Start(DF0); 
-  }else if(data&0x08){ // Key1 pressed
+  }else if(inter&0x08){ // Key1 pressed
     Sound_Start(F0); 
-  }else if(data&0x10){ // Key2 pressed
+  }else if(inter&0x10){ // Key2 pressed
     Sound_Start(AF0); 
-  }else if(data&0x20){ // Key3 pressed
+  }else if(inter&0x20){ // Key3 pressed
     Sound_Start(BF0); 
-  }else{
-    Sound_Off(); // no key pressed, turn off sound
   }
+  uint32_t data = GPIO_PORTA_DATA_R;
+	if(data == 0) Sound_Off(); // no key pressed, turn off sound
 }
      
 int main(void){       
@@ -190,6 +190,16 @@ int main(void){
   //Sound_Start(DF0);
 
   while(1){        
+    // Sound_Start(DF0);
+    // DelayMs(5000); // 1 second
+    // Sound_Start(F0);
+    // DelayMs(5000); // 1 second
+    // Sound_Start(AF0);
+    // DelayMs(5000); // 1 second
+    // Sound_Start(BF0);
+    // DelayMs(5000); // 1 second
+    // Sound_Off();
+    // DelayMs(5000); // 1 second
     // uint64_t but = GPIO_PORTA_DATA_R;
     // if(but&0x04){ // Key0 pressed
     //   Sound_Start(DF0); 
