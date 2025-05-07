@@ -156,17 +156,17 @@ int staticmain(void){
 void GPIOPortA_Handler(void){ // called on PA5-2
   uint32_t inter = GPIO_PORTA_RIS_R; // read interrupt status
   GPIO_PORTA_ICR_R = inter; // clear interrupt flag
-  if(inter&0x04){ // Key0 pressed
+  uint32_t data = GPIO_PORTA_DATA_R & 0x3C;
+  if(data&0x04){ // Key0 pressed
     Sound_Start(DF0); 
-  }else if(inter&0x08){ // Key1 pressed
+  }else if(data&0x08){ // Key1 pressed
     Sound_Start(F0); 
-  }else if(inter&0x10){ // Key2 pressed
+  }else if(data&0x10){ // Key2 pressed
     Sound_Start(AF0); 
-  }else if(inter&0x20){ // Key3 pressed
+  }else if(data&0x20){ // Key3 pressed
     Sound_Start(BF0); 
   }
-  uint32_t data = GPIO_PORTA_DATA_R;
-	if(data == 0) Sound_Off(); // no key pressed, turn off sound
+	else Sound_Off(); // no key pressed, turn off sound
 }
      
 int main(void){       

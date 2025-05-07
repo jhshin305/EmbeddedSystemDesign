@@ -49,7 +49,9 @@ void Sound_Init(void){
 //         if period equals zero, disable sound output
 // Output: none
 void Sound_Start(uint32_t period){
+	NVIC_ST_CTRL_R = 0;
   NVIC_ST_RELOAD_R = period;
+  NVIC_ST_CTRL_R = 0x07;
 }
 
 // **************Sound_Voice*********************
@@ -65,9 +67,10 @@ void Sound_Voice(const uint8_t *voice){
 // stop outputing to DAC
 // Output: none
 void Sound_Off(void){
-	NVIC_ST_RELOAD_R = 0;
+	NVIC_ST_CTRL_R = 0;
+  //NVIC_ST_RELOAD_R = 0;
+  //NVIC_ST_CTRL_R = 0x07;
   DAC_Out(0); // turn off sound
-//  i = 0; // reset index into SinWave
 }
 // **************Sound_GetVoice*********************
 // Read the current voice
