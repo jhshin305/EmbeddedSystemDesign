@@ -68,8 +68,6 @@ void Sound_Voice(const uint8_t *voice){
 // Output: none
 void Sound_Off(void){
 	NVIC_ST_CTRL_R = 0;
-  //NVIC_ST_RELOAD_R = 0;
-  //NVIC_ST_CTRL_R = 0x07;
   DAC_Out(0); // turn off sound
 }
 // **************Sound_GetVoice*********************

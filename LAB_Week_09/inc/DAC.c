@@ -20,16 +20,13 @@
 // Output: none
 void DAC_Init(void){
   // used in Lab 6 and lab 10
-  // 1. Enable clock for Port B
-  SYSCTL_RCGCGPIO_R |= 0x02; // activate port B
-  volatile uint32_t time = 6665;  // 1msec, tuned at 80 MHz
-  while(time){
-    time--;
-  }
-  GPIO_PORTB_DIR_R |= 0x3F; // make PB5-0 output
-  GPIO_PORTB_DEN_R |= 0x3F; // enable digital I/O on PB5-0
-  GPIO_PORTB_DR8R_R |= 0x3F; // set PB5-0 to 8mA drive
-  GPIO_PORTB_DATA_R &= ~0x3F; // clear PB5-0
+  SYSCTL_RCGCGPIO_R |= SYSCTL_RCGC2_GPIOB;  // activate port B
+  volatile uint32_t time = 6665;            // 1msec
+  while(time) time--;
+  GPIO_PORTB_DIR_R |= 0x3F;       // PB5-0 output
+  GPIO_PORTB_DEN_R |= 0x3F;       // PB5-0 enable digital I/O
+  GPIO_PORTB_DR8R_R |= 0x3F;      // PB5-0 8mA
+  GPIO_PORTB_DATA_R &= ~0x3F;     // PB5-0 clear
 }
 
 // **************DAC_Out*********************
@@ -39,6 +36,5 @@ void DAC_Init(void){
 // Output: none
 void DAC_Out(uint32_t data){
   // used in Lab 6 and lab 10
-  //GPIO_PORTB_DATA_R = (GPIO_PORTB_DATA_R & ~0x0000003F) | data; // output to PB5-0
   GPIO_PORTB_DATA_R = data; // output to PB5-0
 }

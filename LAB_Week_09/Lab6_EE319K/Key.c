@@ -20,19 +20,17 @@
 // Output: none
 void Key_Init(void){ 
   // used in Lab 6 
-	SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA; // activate clock for port A
-  volatile uint32_t time = 6665;  // 1msec, tuned at 80 MHz
-  while(time){
-    time--;
-  }
-  GPIO_PORTA_DIR_R &= ~0x3C; // make PA5-2 input (PA5-2 is keys)
-  GPIO_PORTA_DEN_R |= 0x3C; // enable digital I/O on PA5-2
+	SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA; // activate port A
+  volatile uint32_t time = 6665;        // 1msec
+  while(time) time--;
+  GPIO_PORTA_DIR_R &= ~0x3C;            // PA5-2 input
+  GPIO_PORTA_DEN_R |= 0x3C;             // PA5-2 enable digital I/O
   
 	// Initialize interrupts
-  NVIC_EN0_R |= 1 << 0; // Enable interrupt for GPIO Port A
-  GPIO_PORTA_IM_R |= 0x3C; // Arm interrupt on PA5-2
-  GPIO_PORTA_IS_R &= ~0x3C; // Edge-sensitive
-  GPIO_PORTA_IBE_R |= 0x3C; // both edges
+  NVIC_EN0_R |= 1 << 0;                 // Enable interrupt for GPIO Port A
+  GPIO_PORTA_IM_R |= 0x3C;              // unmasking
+  GPIO_PORTA_IS_R &= ~0x3C;             // Edge-sensitive
+  GPIO_PORTA_IBE_R |= 0x3C;             // both edges
 }
 // **************Key_In*********************
 // Input from piano key inputs on PA5-2 or PE3-0
@@ -43,7 +41,7 @@ uint32_t Key_In(void){
   // write this
   uint32_t r = GPIO_PORTA_DATA_R;
   r = r>>2;
-  return r; // replace this line
+  return r;
 }
 
 //------------LaunchPad_Init------------
