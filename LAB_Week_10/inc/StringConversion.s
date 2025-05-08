@@ -23,32 +23,27 @@
 ; Invariables: This function must not permanently modify registers R4 to R11
 Dec2String
     push {r4-r11, lr}         ; save registers on stack
-    mov r2, #1
-    mov r3, #10
-    cmp r0, #0
-    beq _Dec2String_loop
-_get_max_digit
-	mov r5, r2
-    umull r2, r4, r2, r3
-    cmp r0, r2
-    bls _get_max_digit_done
-	cmp r4, #0
-    beq _get_max_digit
-_get_max_digit_done
-	mov r2, r5
+    mov r2, #0
+    push {r2}
+    mov r2, #10
 _Dec2String_loop
-    udiv r4, r0, r2
-	add r5, r4, #0x30
-    str r5, [r1]
-	add r1, #1
-    mul r4, r2
-    sub r0, r4
-    udiv r2, r3
-    cmp r2, #0
-    bne _Dec2String_loop
-_Dec2String_done
-	mov r4, #0
-	str r4, [r1]
+    udiv r3, r0, r2
+    mul r4, r3, r2
+    rsb r4, r0
+    add r4, #0x30
+    push {r4}
+    mov r0, r3            ; update R0 with quotient
+    cmp r0, #0
+    bne _Dec2String_loop  ; if not zero, continue loop
+    b print_dec
+
+print_dec
+    pop {r0}
+    str r0, [r1]         ; store character in array
+    add r1, #1          ; increment pointer to next character
+    cmp r0, #0
+    bne print_dec
+_print_dec_done
     pop {r4-r11, lr}          ; restore registers from stack
     BX LR
 ;* * * * * * * * End of Dec2String * * * * * * * *
@@ -69,55 +64,50 @@ _Dec2String_done
 ; Invariables: This function must not permanently modify registers R4 to R11
 Fix2String
     push {r4-r11, lr}         ; save registers on stack
+    mov r2, #' '
+    push {r2}
+    mov r3, #0
+    mov r4, #'.'
+    mov r5, #'*'
 	ldr r2, =9999
     cmp r0, r2
-    bgt _too_big
-    mov r2, #1000
-    mov r4, #10
-    mov r3, #0
-    b _Fix2String_loop
-_too_big
-    mov r0, #'*'
-    mov r3, #0
-_too_big_loop
-    cmp r3, #1
-    bleq _print_dot
-    cmp r3, #5
-    beq _Fix2String_done
-    str r0, [r1]
-    add r1, #1
-    add r3, #1
-    b _too_big_loop
-_print_dot
-	push {r2}
-    mov r2, #'.'
-    str r2, [r1]
-    pop {r2}
-    add r1, #1
-    add r3, #1
-    bx lr
+    movhi r6, #1
+    mov r2, #10
 _Fix2String_loop
-    cmp r3, #1
-    bleq _print_dot
+    cmp r3, #3
+    pusheq {r4}
+    addeq r3, #1
+    beq _Fix2String_loop
+
     cmp r3, #5
-    beq _Fix2String_done
-    udiv r4, r0, r2
-    add r5, r4, #0x30
-    str r5, [r1]
-    add r1, #1
+    beq print_fix
+
+    cmp r6, #1
+    pusheq {r5}
+	addeq r3, #1
+    beq _Fix2String_loop
+
+    udiv r7, r0, r2
+    mul r8, r7, r2
+    rsb r8, r0
+    add r8, #0x30
+    push {r8}
+    mov r0, r7            ; update R0 with quotient
     add r3, #1
-    mul r4, r2
-    sub r0, r4
-    udiv r2, r3
     b _Fix2String_loop
-_Fix2String_done
-    mov r4, #' '
-    str r4, [r1]
-	add r1, #1
-	mov r4, #0
-	str r4, [r1]
+print_fix
+    pop {r0}
+    cmp r0, #' '
+    cmpeq r6, #1
+    beq _print_fix_done
+
+    str r0, [r1]         ; store character in array
+    add r1, #1          ; increment pointer to next character
+    cmp r0, #' '
+    bne print_fix
+_print_fix_done
     pop {r4-r11, lr}          ; restore registers from stack
     BX LR
-    
+
      ALIGN                           ; make sure the end of this section is aligned
      END                             ; end of file

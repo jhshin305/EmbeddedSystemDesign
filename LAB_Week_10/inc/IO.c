@@ -22,11 +22,11 @@ void Wait10ms(uint32_t);
 void IO_Init(void) { volatile uint32_t delay;
  // --UUU-- Code to initialize PF4 and PF2
   SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOF;
-  Wait10ms(1); // allow time for clock to stabilize
-  GPIO_PORTF_DIR_R |= 0x04; // PF2 output
-  GPIO_PORTF_DIR_R &= ~0x10; // PF4 input
+	Wait10ms(delay);
   GPIO_PORTF_DEN_R |= 0x14; // PF4 and PF2 digital enable
   GPIO_PORTF_PUR_R |= 0x10; // PF4 pull-up enable
+  GPIO_PORTF_DIR_R |= 0x04; // PF2 output
+  GPIO_PORTF_DIR_R &= ~0x10; // PF4 input
 }
 
 //------------IO_HeartBeat------------
@@ -57,5 +57,5 @@ void IO_Touch(void) {
 //Must really wait for 10ms x count
 void Wait10ms(uint32_t count){
   uint32_t i;
-  for(i=0; i <count*32000; i++){}
+  for(i=0; i <count*32000; i++){};
 }

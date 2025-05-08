@@ -73,80 +73,75 @@ ARM Macro Assembler    Page 2
                                                             it 6)
    44 00000010 601C            str              r4, [r3]    ; write to GPIO por
                                                             t to clear D/C
-   45 00000012         ; ldr r4, [r2]            
-   46 00000012 F000 00FF       and              r0, #0xFF   ; mask command to 8
-                                                             bits
-   47 00000016         ; bic r4, #0xFF
-   48 00000016         ; orr r4, r0
-   49 00000016 6010            str              r0, [r2]    ; write command to 
+   45 00000012 6010            str              r0, [r2]    ; write command to 
                                                             SPI data register
-   50 00000018         _SPIOutCommand_loop2
-   51 00000018 680C            ldr              r4, [r1]    ; read SPI status r
+   46 00000014         _SPIOutCommand_loop2
+   47 00000014 680C            ldr              r4, [r1]    ; read SPI status r
                                                             egister again
-   52 0000001A F014 0F10       tst              r4, #0x10   ; check bit 4 (BUSY
+   48 00000016 F014 0F10       tst              r4, #0x10   ; check bit 4 (BUSY
                                                             )
-   53 0000001E D1FB            bne              _SPIOutCommand_loop2 ; if BUSY 
+   49 0000001A D1FB            bne              _SPIOutCommand_loop2 ; if BUSY 
                                                             is low, continue 
-   54 00000020         
-   55 00000020 BC10            pop              {r4}        ; restore r4 from s
+   50 0000001C         
+   51 0000001C BC10            pop              {r4}        ; restore r4 from s
                                                             tack
-   56 00000022 4770            BX               LR          ;   return
-   57 00000024         
-   58 00000024         
-   59 00000024         
-   60 00000024         ; ***********SPIOutData*****************
-   61 00000024         ; This is a helper function that sends an 8-bit data to 
+   52 0000001E 4770            BX               LR          ; return
+   53 00000020         
+   54 00000020         
+   55 00000020         
+   56 00000020         ; ***********SPIOutData*****************
+   57 00000020         ; This is a helper function that sends an 8-bit data to 
                        the LCD.
-   62 00000024         ; Inputs: R0 = 32-bit data (number)
-   63 00000024         ;         R1 = 32-bit SPI status register address
-   64 00000024         ;         R2 = 32-bit SPI data register address
-   65 00000024         ;         R3 = 32-bit GPIO port address for D/C
-   66 00000024         ; Outputs: none
-   67 00000024         ; Assumes: SPI and GPIO have already been initialized an
+   58 00000020         ; Inputs: R0 = 32-bit data (number)
+   59 00000020         ;         R1 = 32-bit SPI status register address
+   60 00000020         ;         R2 = 32-bit SPI data register address
+   61 00000020         ;         R3 = 32-bit GPIO port address for D/C
+   62 00000020         ; Outputs: none
+   63 00000020         ; Assumes: SPI and GPIO have already been initialized an
                        d enabled
-   68 00000024         ; Note: must be AAPCS compliant
-   69 00000024         ; Note: access to bit 6 of GPIO must be friendly
-   70 00000024         SPIOutData
-   71 00000024         ; --UUU-- Code to write data to the LCD
-   72 00000024         ;1) Read the SPI status register (R1 has address) and ch
+   64 00000020         ; Note: must be AAPCS compliant
+   65 00000020         ; Note: access to bit 6 of GPIO must be friendly
+   66 00000020         SPIOutData
+   67 00000020         ; --UUU-- Code to write data to the LCD
+   68 00000020         ;1) Read the SPI status register (R1 has address) and ch
                        eck bit 1, 
-   73 00000024         ;2) If bit 1 is low, loop back to step 1 (wait for TNF b
+   69 00000020         ;2) If bit 1 is low, loop back to step 1 (wait for TNF b
                        it to be high)
-   74 00000024         ;3) Set D/C (GPIO bit 6) to one, be friendly (R3 has add
+   70 00000020         ;3) Set D/C (GPIO bit 6) to one, be friendly (R3 has add
                        ress)
-   75 00000024         ;4) Write the data to the SPI data register (R2 has addr
+   71 00000020         ;4) Write the data to the SPI data register (R2 has addr
                        ess)
-   76 00000024 B410            push             {r4}        ; save r4 on stack
-   77 00000026         _SPIOutData_loop
-   78 00000026 680C            ldr              r4, [r1]    ; read SPI status r
+   72 00000020 B410            push             {r4}        ; save r4 on stack
+   73 00000022         _SPIOutData_loop
+   74 00000022 680C            ldr              r4, [r1]    ; read SPI status r
                                                             egister
-   79 00000028 F014 0F02       tst              r4, #0x02   ; check bit 1 (TNF)
+   75 00000024 F014 0F02       tst              r4, #0x02   ; check bit 1 (TNF)
                                                             
-   80 0000002C D0FB            beq              _SPIOutData_loop ; if TNF is hi
+   76 00000028 D0FB            beq              _SPIOutData_loop ; if TNF is hi
                                                             gh, continue
-   81 0000002E 681C            ldr              r4, [r3]    ; read GPIO port
-   82 00000030 F044 0440       orr              r4, #0x40   ; set D/C (GPIO bit
+   77 0000002A 681C            ldr              r4, [r3]    ; read GPIO port
+   78 0000002C F044 0440       orr              r4, #0x40   ; set D/C (GPIO bit
                                                              6)
-   83 00000034 601C            str              r4, [r3]    ; write to GPIO por
+   79 00000030 601C            str              r4, [r3]    ; write to GPIO por
+                                                            t to set D/C
+   80 00000032 6010            str              r0, [r2]    ; write data to SPI
+                                                             data register
+   81 00000034         
+   82 00000034 BC10            pop              {r4}        ; restore r4 from s
 
 
 
 ARM Macro Assembler    Page 3 
 
 
-                                                            t to set D/C
-   84 00000036 6010            str              r0, [r2]    ; write data to SPI
-                                                             data register
-   85 00000038         
-   86 00000038 BC10            pop              {r4}        ; restore r4 from s
                                                             tack
-   87 0000003A 4770            BX               LR          ;return
-   88 0000003C         ;****************************************************
-   89 0000003C         
-   90 0000003C                 ALIGN                        ; make sure the end
+   83 00000036 4770            BX               LR          ; return
+   84 00000038         ;****************************************************
+   85 00000038         
+   86 00000038                 ALIGN                        ; make sure the end
                                                              of this section is
                                                              aligned
-   91 0000003C                 END                          ; end of file
+   87 00000038                 END                          ; end of file
 Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M4 --fpu=
 SoftVFP --depend=.\busywait.d -o.\busywait.o -I.\RTE\_Lab7 -IC:\Users\jhshin\Ap
 pData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -IC:\Users\jhshin\AppD
@@ -176,11 +171,11 @@ Symbol: SPIOutCommand
    Uses
       At line 11 in file ..\inc\BusyWait.s
 Comment: SPIOutCommand used once
-SPIOutData 00000024
+SPIOutData 00000020
 
 Symbol: SPIOutData
    Definitions
-      At line 70 in file ..\inc\BusyWait.s
+      At line 66 in file ..\inc\BusyWait.s
    Uses
       At line 12 in file ..\inc\BusyWait.s
 Comment: SPIOutData used once
@@ -192,21 +187,21 @@ Symbol: _SPIOutCommand_loop1
    Uses
       At line 41 in file ..\inc\BusyWait.s
 Comment: _SPIOutCommand_loop1 used once
-_SPIOutCommand_loop2 00000018
+_SPIOutCommand_loop2 00000014
 
 Symbol: _SPIOutCommand_loop2
    Definitions
-      At line 50 in file ..\inc\BusyWait.s
+      At line 46 in file ..\inc\BusyWait.s
    Uses
-      At line 53 in file ..\inc\BusyWait.s
+      At line 49 in file ..\inc\BusyWait.s
 Comment: _SPIOutCommand_loop2 used once
-_SPIOutData_loop 00000026
+_SPIOutData_loop 00000022
 
 Symbol: _SPIOutData_loop
    Definitions
-      At line 77 in file ..\inc\BusyWait.s
+      At line 73 in file ..\inc\BusyWait.s
    Uses
-      At line 80 in file ..\inc\BusyWait.s
+      At line 76 in file ..\inc\BusyWait.s
 Comment: _SPIOutData_loop used once
 6 symbols
 341 symbols in table

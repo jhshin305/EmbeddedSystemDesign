@@ -35,47 +35,124 @@ ARM Macro Assembler    Page 1
    23 00000000         ; Invariables: This function must not permanently modify
                         registers R4 to R11
    24 00000000         Dec2String
-   25 00000000         
-   26 00000000 4770            BX               LR
-   27 00000002         ;* * * * * * * * End of Dec2String * * * * * * * *
-   28 00000002         
-   29 00000002         
-   30 00000002         ; -----------------------Fix2String---------------------
-                       -
-   31 00000002         ; Create characters for LCD display in fixed-point forma
-                       t
-   32 00000002         ; unsigned decimal, resolution 0.001, range 0.000 to 9.9
-                       99
-   33 00000002         ; Inputs:  R0 is an unsigned 32-bit number
-   34 00000002         ;          R1 pointer to empty array
-   35 00000002         ; Outputs: none
-   36 00000002         ; E.g., R0=0,    then create "0.000 "
-   37 00000002         ;       R0=3,    then create "0.003"
-   38 00000002         ;       R0=89,   then create "0.089"
-   39 00000002         ;       R0=123,  then create "0.123"
-   40 00000002         ;       R0=9999, then create "9.999"
-   41 00000002         ;       R0>9999, then create "*.***"
-   42 00000002         ; Invariables: This function must not permanently modify
-                        registers R4 to R11
-   43 00000002         Fix2String
-   44 00000002         
-   45 00000002 4770            BX               LR
-   46 00000004         
-   47 00000004         
-   48 00000004         
+   25 00000000 E92D 4FF0       push             {r4-r11, lr} ; save registers o
+                                                            n stack
+   26 00000004 F04F 0200       mov              r2, #0
+   27 00000008 B404            push             {r2}
+   28 0000000A F04F 020A       mov              r2, #10
+   29 0000000E         _Dec2String_loop
+   30 0000000E FBB0 F3F2       udiv             r3, r0, r2
+   31 00000012 FB03 F402       mul              r4, r3, r2
+   32 00000016 EBC4 0400       rsb              r4, r0
+   33 0000001A F104 0430       add              r4, #0x30
+   34 0000001E B410            push             {r4}
+   35 00000020 4618            mov              r0, r3      ; update R0 with qu
+                                                            otient
+   36 00000022 2800            cmp              r0, #0
+   37 00000024 D1F3            bne              _Dec2String_loop ; if not zero,
+                                                             continue loop
+   38 00000026 E7FF            b                print_dec
+   39 00000028         
+   40 00000028         print_dec
+   41 00000028 BC01            pop              {r0}
+   42 0000002A 6008            str              r0, [r1]    ; store character i
+                                                            n array
+   43 0000002C F101 0101       add              r1, #1      ; increment pointer
+                                                             to next character
+   44 00000030 2800            cmp              r0, #0
+   45 00000032 D1F9            bne              print_dec
+   46 00000034         _print_dec_done
+   47 00000034 E8BD 4FF0       pop              {r4-r11, lr} ; restore register
 
 
 
 ARM Macro Assembler    Page 2 
 
 
-   49 00000004         
-   50 00000004         
-   51 00000004         
-   52 00000004                 ALIGN                        ; make sure the end
+                                                            s from stack
+   48 00000038 4770            BX               LR
+   49 0000003A         ;* * * * * * * * End of Dec2String * * * * * * * *
+   50 0000003A         
+   51 0000003A         
+   52 0000003A         ; -----------------------Fix2String---------------------
+                       -
+   53 0000003A         ; Create characters for LCD display in fixed-point forma
+                       t
+   54 0000003A         ; unsigned decimal, resolution 0.001, range 0.000 to 9.9
+                       99
+   55 0000003A         ; Inputs:  R0 is an unsigned 32-bit number
+   56 0000003A         ;          R1 pointer to empty array
+   57 0000003A         ; Outputs: none
+   58 0000003A         ; E.g., R0=0,    then create "0.000 "
+   59 0000003A         ;       R0=3,    then create "0.003"
+   60 0000003A         ;       R0=89,   then create "0.089"
+   61 0000003A         ;       R0=123,  then create "0.123"
+   62 0000003A         ;       R0=9999, then create "9.999"
+   63 0000003A         ;       R0>9999, then create "*.***"
+   64 0000003A         ; Invariables: This function must not permanently modify
+                        registers R4 to R11
+   65 0000003A         Fix2String
+   66 0000003A E92D 4FF0       push             {r4-r11, lr} ; save registers o
+                                                            n stack
+   67 0000003E F04F 0220       mov              r2, #' '
+   68 00000042 B404            push             {r2}
+   69 00000044 F04F 0300       mov              r3, #0
+   70 00000048 F04F 042E       mov              r4, #'.'
+   71 0000004C F04F 052A       mov              r5, #'*'
+   72 00000050 F242 720F       ldr              r2, =9999
+   73 00000054 4290            cmp              r0, r2
+   74 00000056 BF88 2601       movhi            r6, #1
+   75 0000005A F04F 020A       mov              r2, #10
+   76 0000005E         _Fix2String_loop
+   77 0000005E 2B03            cmp              r3, #3
+   78 00000060 BF04 B410       pusheq           {r4}
+   79 00000064 3301            addeq            r3, #1
+   80 00000066 D0FA            beq              _Fix2String_loop
+   81 00000068         
+   82 00000068 2B05            cmp              r3, #5
+   83 0000006A D012            beq              print_fix
+   84 0000006C         
+   85 0000006C 2E01            cmp              r6, #1
+   86 0000006E BF04 B420       pusheq           {r5}
+   87 00000072 3301            addeq            r3, #1
+   88 00000074 D0F3            beq              _Fix2String_loop
+   89 00000076         
+   90 00000076 FBB0 F7F2       udiv             r7, r0, r2
+   91 0000007A FB07 F802       mul              r8, r7, r2
+   92 0000007E EBC8 0800       rsb              r8, r0
+   93 00000082 F108 0830       add              r8, #0x30
+   94 00000086 F84D 8D04       push             {r8}
+   95 0000008A 4638            mov              r0, r7      ; update R0 with qu
+                                                            otient
+   96 0000008C F103 0301       add              r3, #1
+   97 00000090 E7E5            b                _Fix2String_loop
+   98 00000092         print_fix
+   99 00000092 BC01            pop              {r0}
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+  100 00000094 2820            cmp              r0, #' '
+  101 00000096 BF08 2E01       cmpeq            r6, #1
+  102 0000009A D004            beq              _print_fix_done
+  103 0000009C         
+  104 0000009C 6008            str              r0, [r1]    ; store character i
+                                                            n array
+  105 0000009E F101 0101       add              r1, #1      ; increment pointer
+                                                             to next character
+  106 000000A2 2820            cmp              r0, #' '
+  107 000000A4 D1F5            bne              print_fix
+  108 000000A6         _print_fix_done
+  109 000000A6 E8BD 4FF0       pop              {r4-r11, lr} ; restore register
+                                                            s from stack
+  110 000000AA 4770            BX               LR
+  111 000000AC         
+  112 000000AC                 ALIGN                        ; make sure the end
                                                              of this section is
                                                              aligned
-   53 00000004                 END                          ; end of file
+  113 000000AC                 END                          ; end of file
 Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M4 --fpu=
 SoftVFP --depend=.\stringconversion.d -o.\stringconversion.o -I.\RTE\_Lab7 -IC:
 \Users\jhshin\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -IC:\U
@@ -105,13 +182,71 @@ Symbol: Dec2String
    Uses
       At line 10 in file ..\inc\StringConversion.s
 Comment: Dec2String used once
-Fix2String 00000002
+Fix2String 0000003A
 
 Symbol: Fix2String
    Definitions
-      At line 43 in file ..\inc\StringConversion.s
+      At line 65 in file ..\inc\StringConversion.s
    Uses
       At line 11 in file ..\inc\StringConversion.s
 Comment: Fix2String used once
-3 symbols
-338 symbols in table
+_Dec2String_loop 0000000E
+
+Symbol: _Dec2String_loop
+   Definitions
+      At line 29 in file ..\inc\StringConversion.s
+   Uses
+      At line 37 in file ..\inc\StringConversion.s
+Comment: _Dec2String_loop used once
+_Fix2String_loop 0000005E
+
+Symbol: _Fix2String_loop
+   Definitions
+      At line 76 in file ..\inc\StringConversion.s
+   Uses
+      At line 80 in file ..\inc\StringConversion.s
+      At line 88 in file ..\inc\StringConversion.s
+      At line 97 in file ..\inc\StringConversion.s
+
+_print_dec_done 00000034
+
+Symbol: _print_dec_done
+   Definitions
+      At line 46 in file ..\inc\StringConversion.s
+   Uses
+      None
+Comment: _print_dec_done unused
+_print_fix_done 000000A6
+
+Symbol: _print_fix_done
+   Definitions
+      At line 108 in file ..\inc\StringConversion.s
+   Uses
+      At line 102 in file ..\inc\StringConversion.s
+Comment: _print_fix_done used once
+print_dec 00000028
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+
+Symbol: print_dec
+   Definitions
+      At line 40 in file ..\inc\StringConversion.s
+   Uses
+      At line 38 in file ..\inc\StringConversion.s
+      At line 45 in file ..\inc\StringConversion.s
+
+print_fix 00000092
+
+Symbol: print_fix
+   Definitions
+      At line 98 in file ..\inc\StringConversion.s
+   Uses
+      At line 83 in file ..\inc\StringConversion.s
+      At line 107 in file ..\inc\StringConversion.s
+
+9 symbols
+344 symbols in table

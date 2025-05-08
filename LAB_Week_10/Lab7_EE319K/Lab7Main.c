@@ -101,6 +101,9 @@ uint32_t const TestData[SIZE] ={
 
 
 int main(void){  
+	SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA;
+    int j = 1000;
+    while(j--){}
   uint32_t i;
   PLL_Init(Bus80MHz);    
   TExaS_Init(GRADER); // set system clock to 80 MHz
@@ -118,12 +121,13 @@ int main(void){
   IO_Touch();
   ST7735_FillScreen(0);       // set screen to black
   for(i=0;i<SIZE;i++){
+    
     IO_HeartBeat();
     ST7735_SetCursor(0,i);
     ST7735_OutUDec(TestData[i]);
     ST7735_SetCursor(11,i);
     ST7735_OutFix(TestData[i]);
-    IO_Touch(); // remove this line to see all test cases
+    //IO_Touch(); // remove this line to see all test cases
   }
   while(1){
   }
