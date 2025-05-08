@@ -22,7 +22,34 @@
 ; Output: none
 ; Invariables: This function must not permanently modify registers R4 to R11
 Dec2String
-
+    push {r4-r11, lr}         ; save registers on stack
+    mov r2, #1
+    mov r3, #10
+    cmp r0, #0
+    beq _Dec2String_loop
+_get_max_digit
+	mov r5, r2
+    umull r2, r4, r2, r3
+    cmp r0, r2
+    bls _get_max_digit_done
+	cmp r4, #0
+    beq _get_max_digit
+_get_max_digit_done
+	mov r2, r5
+_Dec2String_loop
+    udiv r4, r0, r2
+	add r5, r4, #0x30
+    str r5, [r1]
+	add r1, #1
+    mul r4, r2
+    sub r0, r4
+    udiv r2, r3
+    cmp r2, #0
+    bne _Dec2String_loop
+_Dec2String_done
+	mov r4, #0
+	str r4, [r1]
+    pop {r4-r11, lr}          ; restore registers from stack
     BX LR
 ;* * * * * * * * End of Dec2String * * * * * * * *
 
@@ -41,13 +68,56 @@ Dec2String
 ;       R0>9999, then create "*.***"
 ; Invariables: This function must not permanently modify registers R4 to R11
 Fix2String
-
+    push {r4-r11, lr}         ; save registers on stack
+	ldr r2, =9999
+    cmp r0, r2
+    bgt _too_big
+    mov r2, #1000
+    mov r4, #10
+    mov r3, #0
+    b _Fix2String_loop
+_too_big
+    mov r0, #'*'
+    mov r3, #0
+_too_big_loop
+    cmp r3, #1
+    bleq _print_dot
+    cmp r3, #5
+    beq _Fix2String_done
+    str r0, [r1]
+    add r1, #1
+    add r3, #1
+    b _too_big_loop
+_print_dot
+	push {r2}
+    mov r2, #'.'
+    str r2, [r1]
+    pop {r2}
+    add r1, #1
+    add r3, #1
+    bx lr
+_Fix2String_loop
+    cmp r3, #1
+    bleq _print_dot
+    cmp r3, #5
+    beq _Fix2String_done
+    udiv r4, r0, r2
+    add r5, r4, #0x30
+    str r5, [r1]
+    add r1, #1
+    add r3, #1
+    mul r4, r2
+    sub r0, r4
+    udiv r2, r3
+    b _Fix2String_loop
+_Fix2String_done
+    mov r4, #' '
+    str r4, [r1]
+	add r1, #1
+	mov r4, #0
+	str r4, [r1]
+    pop {r4-r11, lr}          ; restore registers from stack
     BX LR
-
-
-
- 
-
-
+    
      ALIGN                           ; make sure the end of this section is aligned
      END                             ; end of file
