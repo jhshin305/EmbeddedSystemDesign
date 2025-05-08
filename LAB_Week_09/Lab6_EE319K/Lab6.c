@@ -118,16 +118,6 @@ void static DelayMs(uint32_t n){
     n--;
   }
 }
-void static Delay10us(uint32_t n){
-  volatile uint32_t time;
-  while(n){
-    time = 66;  // 1msec, tuned at 80 MHz
-    while(time){
-      time--;
-    }
-    n--;
-  }
-}
 // lab video Lab6_static
 // use this if you DO NOT have a voltmeter
 // you need to implement LaunchPad_Init and LaunchPad_Input
@@ -156,17 +146,17 @@ int staticmain(void){
 void GPIOPortA_Handler(void){
   uint32_t inter = GPIO_PORTA_RIS_R;
   GPIO_PORTA_ICR_R = inter;
-  uint32_t data = GPIO_PORTA_DATA_R & 0x3C;
-  if(data&0x04){        // Key0 pressed
+  uint32_t data = Key_In(); // read keys
+  if(data&(1 << 0)){            // Key0 pressed
     Sound_Start(DF0); 
-  }else if(data&0x08){  // Key1 pressed
+  }else if(data&(1 << 1)){      // Key1 pressed
     Sound_Start(F0); 
-  }else if(data&0x10){  // Key2 pressed
+  }else if(data&(1 << 2)){      // Key2 pressed
     Sound_Start(AF0); 
-  }else if(data&0x20){  // Key3 pressed
+  }else if(data&(1 << 3)){      // Key3 pressed
     Sound_Start(BF0); 
   }
-	else Sound_Off();     // no key pressed, turn off sound
+	else Sound_Off();         // no key pressed, turn off sound
 }
      
 int main(void){       
