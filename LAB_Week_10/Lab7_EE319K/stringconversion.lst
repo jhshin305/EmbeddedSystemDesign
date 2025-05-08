@@ -1,0 +1,117 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; StringConversion.s
+    2 00000000         ; Student names: change this to your names or look very 
+                       silly
+    3 00000000         ; Last modification date: change this to the last modifi
+                       cation date or look very silly
+    4 00000000         ; Runs on TM4C123
+    5 00000000         ; ECE319K lab 7 number to string conversions
+    6 00000000         ;
+    7 00000000         ; Used in ECE319K Labs 7,8,9,10. You write these two fun
+                       ctions
+    8 00000000         
+    9 00000000         
+   10 00000000                 EXPORT           Dec2String
+   11 00000000                 EXPORT           Fix2String
+   12 00000000                 AREA             |.text|, CODE, READONLY, ALIGN=
+2
+   13 00000000                 THUMB
+   14 00000000                 PRESERVE8
+   15 00000000         
+   16 00000000         
+   17 00000000         ;-----------------------Dec2String----------------------
+                       -
+   18 00000000         ; Convert a 32-bit number into unsigned decimal format
+   19 00000000         ; String the string into the empty array add null-termin
+                       ation
+   20 00000000         ; Input: R0 (call by value) 32-bit unsigned number
+   21 00000000         ;        R1 pointer to empty array
+   22 00000000         ; Output: none
+   23 00000000         ; Invariables: This function must not permanently modify
+                        registers R4 to R11
+   24 00000000         Dec2String
+   25 00000000         
+   26 00000000 4770            BX               LR
+   27 00000002         ;* * * * * * * * End of Dec2String * * * * * * * *
+   28 00000002         
+   29 00000002         
+   30 00000002         ; -----------------------Fix2String---------------------
+                       -
+   31 00000002         ; Create characters for LCD display in fixed-point forma
+                       t
+   32 00000002         ; unsigned decimal, resolution 0.001, range 0.000 to 9.9
+                       99
+   33 00000002         ; Inputs:  R0 is an unsigned 32-bit number
+   34 00000002         ;          R1 pointer to empty array
+   35 00000002         ; Outputs: none
+   36 00000002         ; E.g., R0=0,    then create "0.000 "
+   37 00000002         ;       R0=3,    then create "0.003"
+   38 00000002         ;       R0=89,   then create "0.089"
+   39 00000002         ;       R0=123,  then create "0.123"
+   40 00000002         ;       R0=9999, then create "9.999"
+   41 00000002         ;       R0>9999, then create "*.***"
+   42 00000002         ; Invariables: This function must not permanently modify
+                        registers R4 to R11
+   43 00000002         Fix2String
+   44 00000002         
+   45 00000002 4770            BX               LR
+   46 00000004         
+   47 00000004         
+   48 00000004         
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   49 00000004         
+   50 00000004         
+   51 00000004         
+   52 00000004                 ALIGN                        ; make sure the end
+                                                             of this section is
+                                                             aligned
+   53 00000004                 END                          ; end of file
+Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M4 --fpu=
+SoftVFP --depend=.\stringconversion.d -o.\stringconversion.o -I.\RTE\_Lab7 -IC:
+\Users\jhshin\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -IC:\U
+sers\jhshin\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 
+--predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVIS
+ION_VERSION SETA 542" --predefine="TM4C123GH6PM SETA 1" --predefine="_RTE_ SETA
+ 1" --list=.\stringconversion.lst ..\inc\StringConversion.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 12 in file ..\inc\StringConversion.s
+   Uses
+      None
+Comment: .text unused
+Dec2String 00000000
+
+Symbol: Dec2String
+   Definitions
+      At line 24 in file ..\inc\StringConversion.s
+   Uses
+      At line 10 in file ..\inc\StringConversion.s
+Comment: Dec2String used once
+Fix2String 00000002
+
+Symbol: Fix2String
+   Definitions
+      At line 43 in file ..\inc\StringConversion.s
+   Uses
+      At line 11 in file ..\inc\StringConversion.s
+Comment: Fix2String used once
+3 symbols
+338 symbols in table
