@@ -604,82 +604,82 @@ Image Symbol Table
     [Anonymous Symbol]                       0x00000d64   Section        0  lab7grader.o(.text.GradeSPIOutCommand)
     [Anonymous Symbol]                       0x00000f5c   Section        0  lab7grader.o(.text.GradeSPIOutData)
     [Anonymous Symbol]                       0x00001154   Section        0  io.o(.text.IO_HeartBeat)
-    [Anonymous Symbol]                       0x00001170   Section        0  io.o(.text.IO_Init)
-    [Anonymous Symbol]                       0x000011b8   Section        0  io.o(.text.IO_Touch)
-    [Anonymous Symbol]                       0x000011d0   Section        0  lab7grader.o(.text.LogicAnalyzerA)
-    [Anonymous Symbol]                       0x000011ec   Section        0  lab7grader.o(.text.LogicAnalyzerB)
-    [Anonymous Symbol]                       0x00001208   Section        0  lab7grader.o(.text.LogicAnalyzerC)
-    [Anonymous Symbol]                       0x00001224   Section        0  lab7grader.o(.text.LogicAnalyzerE)
-    [Anonymous Symbol]                       0x00001240   Section        0  pll.o(.text.PLL_Init)
-    [Anonymous Symbol]                       0x000012ac   Section        0  st7735.o(.text.ST7735_DrawBitmap)
-    [Anonymous Symbol]                       0x000013d4   Section        0  st7735.o(.text.ST7735_DrawCharS)
-    [Anonymous Symbol]                       0x000015d0   Section        0  st7735.o(.text.ST7735_FillRect)
-    [Anonymous Symbol]                       0x00001694   Section        0  st7735.o(.text.ST7735_FillScreen)
-    [Anonymous Symbol]                       0x000016d8   Section        0  st7735.o(.text.ST7735_InitR)
-    [Anonymous Symbol]                       0x000017c0   Section        0  st7735.o(.text.ST7735_OutChar)
-    [Anonymous Symbol]                       0x000018d8   Section        0  st7735.o(.text.ST7735_OutFix)
-    [Anonymous Symbol]                       0x000019ac   Section        0  st7735.o(.text.ST7735_OutString)
-    [Anonymous Symbol]                       0x000019cc   Section        0  st7735.o(.text.ST7735_OutUDec)
-    [Anonymous Symbol]                       0x00001aa0   Section        0  st7735.o(.text.ST7735_SetCursor)
-    [Anonymous Symbol]                       0x00001ac0   Section        0  lab7grader.o(.text.Scope)
-    [Anonymous Symbol]                       0x00001ad8   Section        0  lab7grader.o(.text.SetBit1)
-    [Anonymous Symbol]                       0x00001b68   Section        0  lab7grader.o(.text.TExaS_Init)
-    [Anonymous Symbol]                       0x00001fc8   Section        0  lab7grader.o(.text.Timer5A_Handler)
-    [Anonymous Symbol]                       0x00001fe0   Section        0  lab7grader.o(.text.UART0_OutUDec)
-    commandList                              0x0000201d   Thumb Code   156  st7735.o(.text.commandList)
-    [Anonymous Symbol]                       0x0000201c   Section        0  st7735.o(.text.commandList)
-    commonInit                               0x000020b9   Thumb Code   428  st7735.o(.text.commonInit)
-    [Anonymous Symbol]                       0x000020b8   Section        0  st7735.o(.text.commonInit)
-    [Anonymous Symbol]                       0x00002264   Section        0  lab7main.o(.text.main)
-    setAddrWindow                            0x00002329   Thumb Code   214  st7735.o(.text.setAddrWindow)
-    [Anonymous Symbol]                       0x00002328   Section        0  st7735.o(.text.setAddrWindow)
-    i.Timer3A_Handler                        0x00002400   Section        0  timer3a.o(i.Timer3A_Handler)
-    i.Timer3A_Init                           0x00002418   Section        0  timer3a.o(i.Timer3A_Init)
-    i.Timer3A_Stop                           0x00002478   Section        0  timer3a.o(i.Timer3A_Stop)
-    i.__scatterload_copy                     0x00002490   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x0000249e   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x000024a0   Section       14  handlers.o(i.__scatterload_zeroinit)
-    Font                                     0x000024ae   Data        1275  st7735.o(.rodata.Font)
-    [Anonymous Symbol]                       0x000024ae   Section        0  st7735.o(.rodata.Font)
-    Rcmd1                                    0x00005baa   Data          59  st7735.o(.rodata.Rcmd1)
-    [Anonymous Symbol]                       0x00005baa   Section        0  st7735.o(.rodata.Rcmd1)
-    Rcmd2green                               0x00005be5   Data          13  st7735.o(.rodata.Rcmd2green)
-    [Anonymous Symbol]                       0x00005be5   Section        0  st7735.o(.rodata.Rcmd2green)
-    Rcmd2red                                 0x00005bf2   Data          13  st7735.o(.rodata.Rcmd2red)
-    [Anonymous Symbol]                       0x00005bf2   Section        0  st7735.o(.rodata.Rcmd2red)
-    Rcmd3                                    0x00005bff   Data          43  st7735.o(.rodata.Rcmd3)
-    [Anonymous Symbol]                       0x00005bff   Section        0  st7735.o(.rodata.Rcmd3)
-    .L.str.7                                 0x00005c6c   Data          29  lab7grader.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x00005c6c   Section        0  lab7grader.o(.rodata.str1.1)
-    .L.str                                   0x00005c89   Data          37  lab7grader.o(.rodata.str1.1)
-    .L.str.14                                0x00005cae   Data          45  lab7grader.o(.rodata.str1.1)
-    .L.str.5                                 0x00005cdb   Data          20  lab7grader.o(.rodata.str1.1)
-    .L.str.4                                 0x00005cef   Data          17  lab7grader.o(.rodata.str1.1)
-    .L.str.13                                0x00005d00   Data          16  lab7grader.o(.rodata.str1.1)
-    .L.str.6                                 0x00005d10   Data          19  lab7grader.o(.rodata.str1.1)
-    .L.str.3                                 0x00005d23   Data          17  lab7grader.o(.rodata.str1.1)
-    .L.str.11                                0x00005d34   Data          39  lab7grader.o(.rodata.str1.1)
-    .L.str.1                                 0x00005d35   Data          38  lab7grader.o(.rodata.str1.1)
-    .L.str.8                                 0x00005d5b   Data          45  lab7grader.o(.rodata.str1.1)
-    .L.str.29                                0x00005d88   Data          44  lab7grader.o(.rodata.str1.1)
-    .L.str.25                                0x00005db4   Data          19  lab7grader.o(.rodata.str1.1)
-    .L.str.12                                0x00005dc7   Data          21  lab7grader.o(.rodata.str1.1)
-    .L.str.2                                 0x00005ddc   Data          24  lab7grader.o(.rodata.str1.1)
-    .L.str.20                                0x00005df4   Data          21  lab7grader.o(.rodata.str1.1)
-    .L.str.24                                0x00005e09   Data          21  lab7grader.o(.rodata.str1.1)
-    .L.str.15                                0x00005e1e   Data          18  lab7grader.o(.rodata.str1.1)
-    .L.str.22                                0x00005e30   Data           8  lab7grader.o(.rodata.str1.1)
-    .L.str.21                                0x00005e38   Data          14  lab7grader.o(.rodata.str1.1)
-    .L.str.26                                0x00005e46   Data           7  lab7grader.o(.rodata.str1.1)
-    .L.str.10                                0x00005e4d   Data          35  lab7grader.o(.rodata.str1.1)
-    .L.str.23                                0x00005e67   Data           9  lab7grader.o(.rodata.str1.1)
-    .L.str.9                                 0x00005e70   Data          12  lab7grader.o(.rodata.str1.1)
-    .L.str.16                                0x00005e7c   Data          33  lab7grader.o(.rodata.str1.1)
-    .L.str.18                                0x00005e9d   Data          44  lab7grader.o(.rodata.str1.1)
-    .L.str.17                                0x00005ec9   Data          42  lab7grader.o(.rodata.str1.1)
-    .L.str.19                                0x00005ef3   Data          48  lab7grader.o(.rodata.str1.1)
-    .L.str.27                                0x00005f23   Data           6  lab7grader.o(.rodata.str1.1)
-    .L.str.28                                0x00005f29   Data           8  lab7grader.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x00001168   Section        0  io.o(.text.IO_Init)
+    [Anonymous Symbol]                       0x000011b0   Section        0  io.o(.text.IO_Touch)
+    [Anonymous Symbol]                       0x000011c8   Section        0  lab7grader.o(.text.LogicAnalyzerA)
+    [Anonymous Symbol]                       0x000011e4   Section        0  lab7grader.o(.text.LogicAnalyzerB)
+    [Anonymous Symbol]                       0x00001200   Section        0  lab7grader.o(.text.LogicAnalyzerC)
+    [Anonymous Symbol]                       0x0000121c   Section        0  lab7grader.o(.text.LogicAnalyzerE)
+    [Anonymous Symbol]                       0x00001238   Section        0  pll.o(.text.PLL_Init)
+    [Anonymous Symbol]                       0x000012a4   Section        0  st7735.o(.text.ST7735_DrawBitmap)
+    [Anonymous Symbol]                       0x000013cc   Section        0  st7735.o(.text.ST7735_DrawCharS)
+    [Anonymous Symbol]                       0x000015c8   Section        0  st7735.o(.text.ST7735_FillRect)
+    [Anonymous Symbol]                       0x0000168c   Section        0  st7735.o(.text.ST7735_FillScreen)
+    [Anonymous Symbol]                       0x000016d0   Section        0  st7735.o(.text.ST7735_InitR)
+    [Anonymous Symbol]                       0x000017b8   Section        0  st7735.o(.text.ST7735_OutChar)
+    [Anonymous Symbol]                       0x000018d0   Section        0  st7735.o(.text.ST7735_OutFix)
+    [Anonymous Symbol]                       0x000019a4   Section        0  st7735.o(.text.ST7735_OutString)
+    [Anonymous Symbol]                       0x000019c4   Section        0  st7735.o(.text.ST7735_OutUDec)
+    [Anonymous Symbol]                       0x00001a98   Section        0  st7735.o(.text.ST7735_SetCursor)
+    [Anonymous Symbol]                       0x00001ab8   Section        0  lab7grader.o(.text.Scope)
+    [Anonymous Symbol]                       0x00001ad0   Section        0  lab7grader.o(.text.SetBit1)
+    [Anonymous Symbol]                       0x00001b60   Section        0  lab7grader.o(.text.TExaS_Init)
+    [Anonymous Symbol]                       0x00001fc0   Section        0  lab7grader.o(.text.Timer5A_Handler)
+    [Anonymous Symbol]                       0x00001fd8   Section        0  lab7grader.o(.text.UART0_OutUDec)
+    commandList                              0x00002015   Thumb Code   156  st7735.o(.text.commandList)
+    [Anonymous Symbol]                       0x00002014   Section        0  st7735.o(.text.commandList)
+    commonInit                               0x000020b1   Thumb Code   428  st7735.o(.text.commonInit)
+    [Anonymous Symbol]                       0x000020b0   Section        0  st7735.o(.text.commonInit)
+    [Anonymous Symbol]                       0x0000225c   Section        0  lab7main.o(.text.main)
+    setAddrWindow                            0x00002325   Thumb Code   214  st7735.o(.text.setAddrWindow)
+    [Anonymous Symbol]                       0x00002324   Section        0  st7735.o(.text.setAddrWindow)
+    i.Timer3A_Handler                        0x000023fc   Section        0  timer3a.o(i.Timer3A_Handler)
+    i.Timer3A_Init                           0x00002414   Section        0  timer3a.o(i.Timer3A_Init)
+    i.Timer3A_Stop                           0x00002474   Section        0  timer3a.o(i.Timer3A_Stop)
+    i.__scatterload_copy                     0x0000248c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0000249a   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0000249c   Section       14  handlers.o(i.__scatterload_zeroinit)
+    Font                                     0x000024aa   Data        1275  st7735.o(.rodata.Font)
+    [Anonymous Symbol]                       0x000024aa   Section        0  st7735.o(.rodata.Font)
+    Rcmd1                                    0x00005ba6   Data          59  st7735.o(.rodata.Rcmd1)
+    [Anonymous Symbol]                       0x00005ba6   Section        0  st7735.o(.rodata.Rcmd1)
+    Rcmd2green                               0x00005be1   Data          13  st7735.o(.rodata.Rcmd2green)
+    [Anonymous Symbol]                       0x00005be1   Section        0  st7735.o(.rodata.Rcmd2green)
+    Rcmd2red                                 0x00005bee   Data          13  st7735.o(.rodata.Rcmd2red)
+    [Anonymous Symbol]                       0x00005bee   Section        0  st7735.o(.rodata.Rcmd2red)
+    Rcmd3                                    0x00005bfb   Data          43  st7735.o(.rodata.Rcmd3)
+    [Anonymous Symbol]                       0x00005bfb   Section        0  st7735.o(.rodata.Rcmd3)
+    .L.str.7                                 0x00005c68   Data          29  lab7grader.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x00005c68   Section        0  lab7grader.o(.rodata.str1.1)
+    .L.str                                   0x00005c85   Data          37  lab7grader.o(.rodata.str1.1)
+    .L.str.14                                0x00005caa   Data          45  lab7grader.o(.rodata.str1.1)
+    .L.str.5                                 0x00005cd7   Data          20  lab7grader.o(.rodata.str1.1)
+    .L.str.4                                 0x00005ceb   Data          17  lab7grader.o(.rodata.str1.1)
+    .L.str.13                                0x00005cfc   Data          16  lab7grader.o(.rodata.str1.1)
+    .L.str.6                                 0x00005d0c   Data          19  lab7grader.o(.rodata.str1.1)
+    .L.str.3                                 0x00005d1f   Data          17  lab7grader.o(.rodata.str1.1)
+    .L.str.11                                0x00005d30   Data          39  lab7grader.o(.rodata.str1.1)
+    .L.str.1                                 0x00005d31   Data          38  lab7grader.o(.rodata.str1.1)
+    .L.str.8                                 0x00005d57   Data          45  lab7grader.o(.rodata.str1.1)
+    .L.str.29                                0x00005d84   Data          44  lab7grader.o(.rodata.str1.1)
+    .L.str.25                                0x00005db0   Data          19  lab7grader.o(.rodata.str1.1)
+    .L.str.12                                0x00005dc3   Data          21  lab7grader.o(.rodata.str1.1)
+    .L.str.2                                 0x00005dd8   Data          24  lab7grader.o(.rodata.str1.1)
+    .L.str.20                                0x00005df0   Data          21  lab7grader.o(.rodata.str1.1)
+    .L.str.24                                0x00005e05   Data          21  lab7grader.o(.rodata.str1.1)
+    .L.str.15                                0x00005e1a   Data          18  lab7grader.o(.rodata.str1.1)
+    .L.str.22                                0x00005e2c   Data           8  lab7grader.o(.rodata.str1.1)
+    .L.str.21                                0x00005e34   Data          14  lab7grader.o(.rodata.str1.1)
+    .L.str.26                                0x00005e42   Data           7  lab7grader.o(.rodata.str1.1)
+    .L.str.10                                0x00005e49   Data          35  lab7grader.o(.rodata.str1.1)
+    .L.str.23                                0x00005e63   Data           9  lab7grader.o(.rodata.str1.1)
+    .L.str.9                                 0x00005e6c   Data          12  lab7grader.o(.rodata.str1.1)
+    .L.str.16                                0x00005e78   Data          33  lab7grader.o(.rodata.str1.1)
+    .L.str.18                                0x00005e99   Data          44  lab7grader.o(.rodata.str1.1)
+    .L.str.17                                0x00005ec5   Data          42  lab7grader.o(.rodata.str1.1)
+    .L.str.19                                0x00005eef   Data          48  lab7grader.o(.rodata.str1.1)
+    .L.str.27                                0x00005f1f   Data           6  lab7grader.o(.rodata.str1.1)
+    .L.str.28                                0x00005f25   Data           8  lab7grader.o(.rodata.str1.1)
     .data                                    0x20000000   Section        4  timer3a.o(.data)
     SaveSP                                   0x2000001c   Data           4  lab7graderwrapper.o(data)
     data                                     0x2000001c   Section        4  lab7graderwrapper.o(data)
@@ -867,40 +867,40 @@ Image Symbol Table
     GradeIO_Init                             0x00000b71   Thumb Code   500  lab7grader.o(.text.GradeIO_Init)
     GradeSPIOutCommand                       0x00000d65   Thumb Code   504  lab7grader.o(.text.GradeSPIOutCommand)
     GradeSPIOutData                          0x00000f5d   Thumb Code   504  lab7grader.o(.text.GradeSPIOutData)
-    IO_HeartBeat                             0x00001155   Thumb Code    26  io.o(.text.IO_HeartBeat)
-    IO_Init                                  0x00001171   Thumb Code    72  io.o(.text.IO_Init)
-    IO_Touch                                 0x000011b9   Thumb Code    24  io.o(.text.IO_Touch)
-    LogicAnalyzerA                           0x000011d1   Thumb Code    28  lab7grader.o(.text.LogicAnalyzerA)
-    LogicAnalyzerB                           0x000011ed   Thumb Code    26  lab7grader.o(.text.LogicAnalyzerB)
-    LogicAnalyzerC                           0x00001209   Thumb Code    28  lab7grader.o(.text.LogicAnalyzerC)
-    LogicAnalyzerE                           0x00001225   Thumb Code    26  lab7grader.o(.text.LogicAnalyzerE)
-    PLL_Init                                 0x00001241   Thumb Code   106  pll.o(.text.PLL_Init)
-    ST7735_DrawBitmap                        0x000012ad   Thumb Code   294  st7735.o(.text.ST7735_DrawBitmap)
-    ST7735_DrawCharS                         0x000013d5   Thumb Code   506  st7735.o(.text.ST7735_DrawCharS)
-    ST7735_FillRect                          0x000015d1   Thumb Code   194  st7735.o(.text.ST7735_FillRect)
-    ST7735_FillScreen                        0x00001695   Thumb Code    68  st7735.o(.text.ST7735_FillScreen)
-    ST7735_InitR                             0x000016d9   Thumb Code   230  st7735.o(.text.ST7735_InitR)
-    ST7735_OutChar                           0x000017c1   Thumb Code   256  st7735.o(.text.ST7735_OutChar)
-    ST7735_OutFix                            0x000018d9   Thumb Code   212  st7735.o(.text.ST7735_OutFix)
-    ST7735_OutString                         0x000019ad   Thumb Code    32  st7735.o(.text.ST7735_OutString)
-    ST7735_OutUDec                           0x000019cd   Thumb Code   212  st7735.o(.text.ST7735_OutUDec)
-    ST7735_SetCursor                         0x00001aa1   Thumb Code    32  st7735.o(.text.ST7735_SetCursor)
-    Scope                                    0x00001ac1   Thumb Code    24  lab7grader.o(.text.Scope)
-    SetBit1                                  0x00001ad9   Thumb Code   142  lab7grader.o(.text.SetBit1)
-    TExaS_Init                               0x00001b69   Thumb Code  1120  lab7grader.o(.text.TExaS_Init)
-    Timer5A_Handler                          0x00001fc9   Thumb Code    24  lab7grader.o(.text.Timer5A_Handler)
-    UART0_OutUDec                            0x00001fe1   Thumb Code    58  lab7grader.o(.text.UART0_OutUDec)
-    main                                     0x00002265   Thumb Code   148  lab7main.o(.text.main)
-    Timer3A_Handler                          0x00002401   Thumb Code    16  timer3a.o(i.Timer3A_Handler)
-    Timer3A_Init                             0x00002419   Thumb Code    74  timer3a.o(i.Timer3A_Init)
-    Timer3A_Stop                             0x00002479   Thumb Code    14  timer3a.o(i.Timer3A_Stop)
-    __scatterload_copy                       0x00002491   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x0000249f   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x000024a1   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Logo                                     0x000029aa   Data       12800  lab7main.o(.rodata.Logo)
-    TestData                                 0x00005c2c   Data          64  lab7main.o(.rodata.TestData)
-    Region$$Table$$Base                      0x00005f34   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00005f54   Number         0  anon$$obj.o(Region$$Table)
+    IO_HeartBeat                             0x00001155   Thumb Code    18  io.o(.text.IO_HeartBeat)
+    IO_Init                                  0x00001169   Thumb Code    72  io.o(.text.IO_Init)
+    IO_Touch                                 0x000011b1   Thumb Code    24  io.o(.text.IO_Touch)
+    LogicAnalyzerA                           0x000011c9   Thumb Code    28  lab7grader.o(.text.LogicAnalyzerA)
+    LogicAnalyzerB                           0x000011e5   Thumb Code    26  lab7grader.o(.text.LogicAnalyzerB)
+    LogicAnalyzerC                           0x00001201   Thumb Code    28  lab7grader.o(.text.LogicAnalyzerC)
+    LogicAnalyzerE                           0x0000121d   Thumb Code    26  lab7grader.o(.text.LogicAnalyzerE)
+    PLL_Init                                 0x00001239   Thumb Code   106  pll.o(.text.PLL_Init)
+    ST7735_DrawBitmap                        0x000012a5   Thumb Code   294  st7735.o(.text.ST7735_DrawBitmap)
+    ST7735_DrawCharS                         0x000013cd   Thumb Code   506  st7735.o(.text.ST7735_DrawCharS)
+    ST7735_FillRect                          0x000015c9   Thumb Code   194  st7735.o(.text.ST7735_FillRect)
+    ST7735_FillScreen                        0x0000168d   Thumb Code    68  st7735.o(.text.ST7735_FillScreen)
+    ST7735_InitR                             0x000016d1   Thumb Code   230  st7735.o(.text.ST7735_InitR)
+    ST7735_OutChar                           0x000017b9   Thumb Code   256  st7735.o(.text.ST7735_OutChar)
+    ST7735_OutFix                            0x000018d1   Thumb Code   212  st7735.o(.text.ST7735_OutFix)
+    ST7735_OutString                         0x000019a5   Thumb Code    32  st7735.o(.text.ST7735_OutString)
+    ST7735_OutUDec                           0x000019c5   Thumb Code   212  st7735.o(.text.ST7735_OutUDec)
+    ST7735_SetCursor                         0x00001a99   Thumb Code    32  st7735.o(.text.ST7735_SetCursor)
+    Scope                                    0x00001ab9   Thumb Code    24  lab7grader.o(.text.Scope)
+    SetBit1                                  0x00001ad1   Thumb Code   142  lab7grader.o(.text.SetBit1)
+    TExaS_Init                               0x00001b61   Thumb Code  1120  lab7grader.o(.text.TExaS_Init)
+    Timer5A_Handler                          0x00001fc1   Thumb Code    24  lab7grader.o(.text.Timer5A_Handler)
+    UART0_OutUDec                            0x00001fd9   Thumb Code    58  lab7grader.o(.text.UART0_OutUDec)
+    main                                     0x0000225d   Thumb Code   152  lab7main.o(.text.main)
+    Timer3A_Handler                          0x000023fd   Thumb Code    16  timer3a.o(i.Timer3A_Handler)
+    Timer3A_Init                             0x00002415   Thumb Code    74  timer3a.o(i.Timer3A_Init)
+    Timer3A_Stop                             0x00002475   Thumb Code    14  timer3a.o(i.Timer3A_Stop)
+    __scatterload_copy                       0x0000248d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0000249b   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0000249d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Logo                                     0x000029a6   Data       12800  lab7main.o(.rodata.Logo)
+    TestData                                 0x00005c28   Data          64  lab7main.o(.rodata.TestData)
+    Region$$Table$$Base                      0x00005f30   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00005f50   Number         0  anon$$obj.o(Region$$Table)
     PeriodicTask3                            0x20000000   Data           4  timer3a.o(.data)
     EID1                                     0x20000004   Data          11  lab7main.o(.data.EID1)
     EID2                                     0x2000000f   Data          11  lab7main.o(.data.EID2)
@@ -926,9 +926,9 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00005f74, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00005f70, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00005f54, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00005f50, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -957,81 +957,81 @@ Memory Map of the image
     0x00000b70   0x00000b70   0x000001f4   Code   RO          251    .text.GradeIO_Init  lab7grader.o
     0x00000d64   0x00000d64   0x000001f8   Code   RO          245    .text.GradeSPIOutCommand  lab7grader.o
     0x00000f5c   0x00000f5c   0x000001f8   Code   RO          249    .text.GradeSPIOutData  lab7grader.o
-    0x00001154   0x00001154   0x0000001a   Code   RO           37    .text.IO_HeartBeat  io.o
-    0x0000116e   0x0000116e   0x00000002   PAD
-    0x00001170   0x00001170   0x00000048   Code   RO           33    .text.IO_Init       io.o
-    0x000011b8   0x000011b8   0x00000018   Code   RO           39    .text.IO_Touch      io.o
-    0x000011d0   0x000011d0   0x0000001c   Code   RO          215    .text.LogicAnalyzerA  lab7grader.o
-    0x000011ec   0x000011ec   0x0000001a   Code   RO          217    .text.LogicAnalyzerB  lab7grader.o
-    0x00001206   0x00001206   0x00000002   PAD
-    0x00001208   0x00001208   0x0000001c   Code   RO          219    .text.LogicAnalyzerC  lab7grader.o
-    0x00001224   0x00001224   0x0000001a   Code   RO          221    .text.LogicAnalyzerE  lab7grader.o
-    0x0000123e   0x0000123e   0x00000002   PAD
-    0x00001240   0x00001240   0x0000006a   Code   RO          170    .text.PLL_Init      pll.o
-    0x000012aa   0x000012aa   0x00000002   PAD
-    0x000012ac   0x000012ac   0x00000126   Code   RO           84    .text.ST7735_DrawBitmap  st7735.o
-    0x000013d2   0x000013d2   0x00000002   PAD
-    0x000013d4   0x000013d4   0x000001fa   Code   RO           86    .text.ST7735_DrawCharS  st7735.o
-    0x000015ce   0x000015ce   0x00000002   PAD
-    0x000015d0   0x000015d0   0x000000c2   Code   RO           74    .text.ST7735_FillRect  st7735.o
-    0x00001692   0x00001692   0x00000002   PAD
-    0x00001694   0x00001694   0x00000044   Code   RO           60    .text.ST7735_FillScreen  st7735.o
-    0x000016d8   0x000016d8   0x000000e6   Code   RO           62    .text.ST7735_InitR  st7735.o
-    0x000017be   0x000017be   0x00000002   PAD
-    0x000017c0   0x000017c0   0x00000118   Code   RO          116    .text.ST7735_OutChar  st7735.o
-    0x000018d8   0x000018d8   0x000000d4   Code   RO           94    .text.ST7735_OutFix  st7735.o
-    0x000019ac   0x000019ac   0x00000020   Code   RO          118    .text.ST7735_OutString  st7735.o
-    0x000019cc   0x000019cc   0x000000d4   Code   RO           92    .text.ST7735_OutUDec  st7735.o
-    0x00001aa0   0x00001aa0   0x00000020   Code   RO           58    .text.ST7735_SetCursor  st7735.o
-    0x00001ac0   0x00001ac0   0x00000018   Code   RO          213    .text.Scope         lab7grader.o
-    0x00001ad8   0x00001ad8   0x0000008e   Code   RO          247    .text.SetBit1       lab7grader.o
-    0x00001b66   0x00001b66   0x00000002   PAD
-    0x00001b68   0x00001b68   0x00000460   Code   RO          265    .text.TExaS_Init    lab7grader.o
-    0x00001fc8   0x00001fc8   0x00000018   Code   RO          225    .text.Timer5A_Handler  lab7grader.o
-    0x00001fe0   0x00001fe0   0x0000003a   Code   RO          237    .text.UART0_OutUDec  lab7grader.o
-    0x0000201a   0x0000201a   0x00000002   PAD
-    0x0000201c   0x0000201c   0x0000009c   Code   RO           64    .text.commandList   st7735.o
-    0x000020b8   0x000020b8   0x000001ac   Code   RO           56    .text.commonInit    st7735.o
-    0x00002264   0x00002264   0x000000c4   Code   RO           13    .text.main          lab7main.o
-    0x00002328   0x00002328   0x000000d6   Code   RO           68    .text.setAddrWindow  st7735.o
-    0x000023fe   0x000023fe   0x00000002   PAD
-    0x00002400   0x00002400   0x00000018   Code   RO          178    i.Timer3A_Handler   timer3a.o
-    0x00002418   0x00002418   0x00000060   Code   RO          179    i.Timer3A_Init      timer3a.o
-    0x00002478   0x00002478   0x00000018   Code   RO          180    i.Timer3A_Stop      timer3a.o
-    0x00002490   0x00002490   0x0000000e   Code   RO          317    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0000249e   0x0000249e   0x00000002   Code   RO          318    i.__scatterload_null  mc_w.l(handlers.o)
-    0x000024a0   0x000024a0   0x0000000e   Code   RO          319    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x000024ae   0x000024ae   0x000004fb   Data   RO          153    .rodata.Font        st7735.o
-    0x000029a9   0x000029a9   0x00000001   PAD
-    0x000029aa   0x000029aa   0x00003200   Data   RO           15    .rodata.Logo        lab7main.o
-    0x00005baa   0x00005baa   0x0000003b   Data   RO          142    .rodata.Rcmd1       st7735.o
-    0x00005be5   0x00005be5   0x0000000d   Data   RO          143    .rodata.Rcmd2green  st7735.o
-    0x00005bf2   0x00005bf2   0x0000000d   Data   RO          146    .rodata.Rcmd2red    st7735.o
-    0x00005bff   0x00005bff   0x0000002b   Data   RO          147    .rodata.Rcmd3       st7735.o
-    0x00005c2a   0x00005c2a   0x00000002   PAD
-    0x00005c2c   0x00005c2c   0x00000040   Data   RO           18    .rodata.TestData    lab7main.o
-    0x00005c6c   0x00005c6c   0x000002c5   Data   RO          273    .rodata.str1.1      lab7grader.o
-    0x00005f31   0x00005f31   0x00000003   PAD
-    0x00005f34   0x00005f34   0x00000020   Data   RO          316    Region$$Table       anon$$obj.o
+    0x00001154   0x00001154   0x00000012   Code   RO           37    .text.IO_HeartBeat  io.o
+    0x00001166   0x00001166   0x00000002   PAD
+    0x00001168   0x00001168   0x00000048   Code   RO           33    .text.IO_Init       io.o
+    0x000011b0   0x000011b0   0x00000018   Code   RO           39    .text.IO_Touch      io.o
+    0x000011c8   0x000011c8   0x0000001c   Code   RO          215    .text.LogicAnalyzerA  lab7grader.o
+    0x000011e4   0x000011e4   0x0000001a   Code   RO          217    .text.LogicAnalyzerB  lab7grader.o
+    0x000011fe   0x000011fe   0x00000002   PAD
+    0x00001200   0x00001200   0x0000001c   Code   RO          219    .text.LogicAnalyzerC  lab7grader.o
+    0x0000121c   0x0000121c   0x0000001a   Code   RO          221    .text.LogicAnalyzerE  lab7grader.o
+    0x00001236   0x00001236   0x00000002   PAD
+    0x00001238   0x00001238   0x0000006a   Code   RO          170    .text.PLL_Init      pll.o
+    0x000012a2   0x000012a2   0x00000002   PAD
+    0x000012a4   0x000012a4   0x00000126   Code   RO           84    .text.ST7735_DrawBitmap  st7735.o
+    0x000013ca   0x000013ca   0x00000002   PAD
+    0x000013cc   0x000013cc   0x000001fa   Code   RO           86    .text.ST7735_DrawCharS  st7735.o
+    0x000015c6   0x000015c6   0x00000002   PAD
+    0x000015c8   0x000015c8   0x000000c2   Code   RO           74    .text.ST7735_FillRect  st7735.o
+    0x0000168a   0x0000168a   0x00000002   PAD
+    0x0000168c   0x0000168c   0x00000044   Code   RO           60    .text.ST7735_FillScreen  st7735.o
+    0x000016d0   0x000016d0   0x000000e6   Code   RO           62    .text.ST7735_InitR  st7735.o
+    0x000017b6   0x000017b6   0x00000002   PAD
+    0x000017b8   0x000017b8   0x00000118   Code   RO          116    .text.ST7735_OutChar  st7735.o
+    0x000018d0   0x000018d0   0x000000d4   Code   RO           94    .text.ST7735_OutFix  st7735.o
+    0x000019a4   0x000019a4   0x00000020   Code   RO          118    .text.ST7735_OutString  st7735.o
+    0x000019c4   0x000019c4   0x000000d4   Code   RO           92    .text.ST7735_OutUDec  st7735.o
+    0x00001a98   0x00001a98   0x00000020   Code   RO           58    .text.ST7735_SetCursor  st7735.o
+    0x00001ab8   0x00001ab8   0x00000018   Code   RO          213    .text.Scope         lab7grader.o
+    0x00001ad0   0x00001ad0   0x0000008e   Code   RO          247    .text.SetBit1       lab7grader.o
+    0x00001b5e   0x00001b5e   0x00000002   PAD
+    0x00001b60   0x00001b60   0x00000460   Code   RO          265    .text.TExaS_Init    lab7grader.o
+    0x00001fc0   0x00001fc0   0x00000018   Code   RO          225    .text.Timer5A_Handler  lab7grader.o
+    0x00001fd8   0x00001fd8   0x0000003a   Code   RO          237    .text.UART0_OutUDec  lab7grader.o
+    0x00002012   0x00002012   0x00000002   PAD
+    0x00002014   0x00002014   0x0000009c   Code   RO           64    .text.commandList   st7735.o
+    0x000020b0   0x000020b0   0x000001ac   Code   RO           56    .text.commonInit    st7735.o
+    0x0000225c   0x0000225c   0x000000c8   Code   RO           13    .text.main          lab7main.o
+    0x00002324   0x00002324   0x000000d6   Code   RO           68    .text.setAddrWindow  st7735.o
+    0x000023fa   0x000023fa   0x00000002   PAD
+    0x000023fc   0x000023fc   0x00000018   Code   RO          178    i.Timer3A_Handler   timer3a.o
+    0x00002414   0x00002414   0x00000060   Code   RO          179    i.Timer3A_Init      timer3a.o
+    0x00002474   0x00002474   0x00000018   Code   RO          180    i.Timer3A_Stop      timer3a.o
+    0x0000248c   0x0000248c   0x0000000e   Code   RO          317    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0000249a   0x0000249a   0x00000002   Code   RO          318    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0000249c   0x0000249c   0x0000000e   Code   RO          319    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x000024aa   0x000024aa   0x000004fb   Data   RO          153    .rodata.Font        st7735.o
+    0x000029a5   0x000029a5   0x00000001   PAD
+    0x000029a6   0x000029a6   0x00003200   Data   RO           15    .rodata.Logo        lab7main.o
+    0x00005ba6   0x00005ba6   0x0000003b   Data   RO          142    .rodata.Rcmd1       st7735.o
+    0x00005be1   0x00005be1   0x0000000d   Data   RO          143    .rodata.Rcmd2green  st7735.o
+    0x00005bee   0x00005bee   0x0000000d   Data   RO          146    .rodata.Rcmd2red    st7735.o
+    0x00005bfb   0x00005bfb   0x0000002b   Data   RO          147    .rodata.Rcmd3       st7735.o
+    0x00005c26   0x00005c26   0x00000002   PAD
+    0x00005c28   0x00005c28   0x00000040   Data   RO           18    .rodata.TestData    lab7main.o
+    0x00005c68   0x00005c68   0x000002c5   Data   RO          273    .rodata.str1.1      lab7grader.o
+    0x00005f2d   0x00005f2d   0x00000003   PAD
+    0x00005f30   0x00005f30   0x00000020   Data   RO          316    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00005f54, Size: 0x00000020, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00005f50, Size: 0x00000020, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00005f54   0x00000004   Data   RW          181    .data               timer3a.o
-    0x20000004   0x00005f58   0x0000000b   Data   RW           16    .data.EID1          lab7main.o
-    0x2000000f   0x00005f63   0x0000000b   Data   RW           17    .data.EID2          lab7main.o
-    0x2000001a   0x00005f6e   0x00000002   Data   RW          140    .data.StTextColor   st7735.o
-    0x2000001c   0x00005f70   0x00000004   Data   RW          288    data                lab7graderwrapper.o
+    0x20000000   0x00005f50   0x00000004   Data   RW          181    .data               timer3a.o
+    0x20000004   0x00005f54   0x0000000b   Data   RW           16    .data.EID1          lab7main.o
+    0x2000000f   0x00005f5f   0x0000000b   Data   RW           17    .data.EID2          lab7main.o
+    0x2000001a   0x00005f6a   0x00000002   Data   RW          140    .data.StTextColor   st7735.o
+    0x2000001c   0x00005f6c   0x00000004   Data   RW          288    data                lab7graderwrapper.o
 
 
-    Execution Region ER_ZI (Exec base: 0x20000020, Load base: 0x00005f74, Size: 0x00000468, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000020, Load base: 0x00005f70, Size: 0x00000468, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000020        -       0x00000001   Zero   RW          144    .bss.ColStart       st7735.o
-    0x20000021   0x00005f74   0x00000003   PAD
+    0x20000021   0x00005f70   0x00000003   PAD
     0x20000024        -       0x00000004   Zero   RW          272    .bss.Fail           lab7grader.o
     0x20000028        -       0x00000004   Zero   RW          275    .bss.GraderData     lab7grader.o
     0x2000002c        -       0x00000004   Zero   RW          274    .bss.GraderGPIO     lab7grader.o
@@ -1041,18 +1041,18 @@ Memory Map of the image
     0x2000003c        -       0x0000000c   Zero   RW          154    .bss.Message        st7735.o
     0x20000048        -       0x00000004   Zero   RW          269    .bss.PeriodicTask2  lab7grader.o
     0x2000004c        -       0x00000001   Zero   RW          145    .bss.RowStart       st7735.o
-    0x2000004d   0x00005f74   0x00000003   PAD
+    0x2000004d   0x00005f70   0x00000003   PAD
     0x20000050        -       0x00000004   Zero   RW          276    .bss.Score          lab7grader.o
     0x20000054        -       0x00000004   Zero   RW          138    .bss.StX            st7735.o
     0x20000058        -       0x00000004   Zero   RW          139    .bss.StY            st7735.o
     0x2000005c        -       0x00000001   Zero   RW          148    .bss.TabColor       st7735.o
-    0x2000005d   0x00005f74   0x00000001   PAD
+    0x2000005d   0x00005f70   0x00000001   PAD
     0x2000005e        -       0x00000001   Zero   RW          150    .bss._height        st7735.o
-    0x2000005f   0x00005f74   0x00000001   PAD
+    0x2000005f   0x00005f70   0x00000001   PAD
     0x20000060        -       0x00000001   Zero   RW          149    .bss._width         st7735.o
     0x20000061        -       0x00000010   Zero   RW          280    .bss.myMessage      lab7grader.o
     0x20000071        -       0x00000010   Zero   RW          279    .bss.yourMessage    lab7grader.o
-    0x20000081   0x00005f74   0x00000007   PAD
+    0x20000081   0x00005f70   0x00000007   PAD
     0x20000088        -       0x00000400   Zero   RW            1    STACK               startup.o
 
 
@@ -1064,10 +1064,10 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         56          0          0          0          0        280   busywait.o
-       122          0          0          0          0        907   io.o
+       114          0          0          0          0        910   io.o
       4070          6        709          0         64      14005   lab7grader.o
        816          6          0          4          0        508   lab7graderwrapper.o
-       196         48      12864         22          0       1324   lab7main.o
+       200         48      12864         22          0       1325   lab7main.o
        106          0          0          0          0        625   pll.o
       2858         24       1403          2         25      24908   st7735.o
        672        622          0          0       1024       1012   startup.o
@@ -1075,7 +1075,7 @@ Image component sizes
        144         40          0          4          0       6484   timer3a.o
 
     ----------------------------------------------------------------------
-      9236        746      15014         32       1128      50385   Object Totals
+      9232        746      15014         32       1128      50389   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         24          0          6          0         15          0   (incl. Padding)
 
@@ -1116,15 +1116,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      9390        764      15014         32       1128      50577   Grand Totals
-      9390        764      15014         32       1128      50577   ELF Image Totals
-      9390        764      15014         32          0          0   ROM Totals
+      9386        764      15014         32       1128      50581   Grand Totals
+      9386        764      15014         32       1128      50581   ELF Image Totals
+      9386        764      15014         32          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                24404 (  23.83kB)
+    Total RO  Size (Code + RO Data)                24400 (  23.83kB)
     Total RW  Size (RW Data + ZI Data)              1160 (   1.13kB)
-    Total ROM Size (Code + RO Data + RW Data)      24436 (  23.86kB)
+    Total ROM Size (Code + RO Data + RW Data)      24432 (  23.86kB)
 
 ==============================================================================
 

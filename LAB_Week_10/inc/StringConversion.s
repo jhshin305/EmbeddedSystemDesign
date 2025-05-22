@@ -22,7 +22,7 @@
 ; Output: none
 ; Invariables: This function must not permanently modify registers R4 to R11
 Dec2String
-    push {r4-r11, lr}         ; save registers on stack
+    push {r4-r11, lr}       ; save registers on stack
     mov r2, #0
     push {r2}
     mov r2, #10
@@ -32,19 +32,19 @@ _Dec2String_loop
     rsb r4, r0
     add r4, #0x30
     push {r4}
-    mov r0, r3            ; update R0 with quotient
+    mov r0, r3              ; update R0 with quotient
     cmp r0, #0
-    bne _Dec2String_loop  ; if not zero, continue loop
+    bne _Dec2String_loop    ; if not zero, continue loop
     b print_dec
 
 print_dec
     pop {r0}
-    str r0, [r1]         ; store character in array
-    add r1, #1          ; increment pointer to next character
+    str r0, [r1]            ; store character in array
+    add r1, #1              ; increment pointer to next character
     cmp r0, #0
     bne print_dec
 _print_dec_done
-    pop {r4-r11, lr}          ; restore registers from stack
+    pop {r4-r11, lr}        ; restore registers from stack
     BX LR
 ;* * * * * * * * End of Dec2String * * * * * * * *
 
@@ -63,7 +63,7 @@ _print_dec_done
 ;       R0>9999, then create "*.***"
 ; Invariables: This function must not permanently modify registers R4 to R11
 Fix2String
-    push {r4-r11, lr}         ; save registers on stack
+    push {r4-r11, lr}       ; save registers on stack
     mov r2, #' '
     push {r2}
     mov r3, #0
@@ -92,7 +92,7 @@ _Fix2String_loop
     rsb r8, r0
     add r8, #0x30
     push {r8}
-    mov r0, r7            ; update R0 with quotient
+    mov r0, r7              ; update R0 with quotient
     add r3, #1
     b _Fix2String_loop
 print_fix
@@ -101,12 +101,12 @@ print_fix
     cmpeq r6, #1
     beq _print_fix_done
 
-    str r0, [r1]         ; store character in array
-    add r1, #1          ; increment pointer to next character
+    str r0, [r1]            ; store character in array
+    add r1, #1              ; increment pointer to next character
     cmp r0, #' '
     bne print_fix
 _print_fix_done
-    pop {r4-r11, lr}          ; restore registers from stack
+    pop {r4-r11, lr}        ; restore registers from stack
     BX LR
 
      ALIGN                           ; make sure the end of this section is aligned
