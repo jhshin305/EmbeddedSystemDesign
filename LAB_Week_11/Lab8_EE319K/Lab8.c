@@ -45,6 +45,11 @@ void PortF_Init(void){
   GPIO_PORTF_DIR_R |= 0x0E;
   GPIO_PORTF_DEN_R |= 0x0E;
 }
+void PortA_Init(void){
+  volatile int delay;
+  SYSCTL_RCGC2_R |= 0x01; // activate clock for Port A
+  delay = SYSCTL_RCGCGPIO_R; // allow time for clock to start
+}
 uint32_t Data;        // 12-bit ADC
 uint32_t Position;    // 32-bit fixed-point 0.001 cm
 int main1(void){      // single step this program and look at Data
@@ -99,6 +104,7 @@ int main3(void){ uint32_t time=0;
   NVIC_ST_CURRENT_R = 0;    // any write to current clears it
   NVIC_ST_CTRL_R = 5;
   PortF_Init();
+  PortA_Init();
   ADC_Init();         // turn on ADC, set channel to 5
   ST7735_PlotClear(0,2000); 
   while(1){  // fs = 80,000,000/5,000,000 = 16 Hz
@@ -204,26 +210,54 @@ void Timer3A_Stop(void){
   TIMER3_CTL_R = 0x00000000;  // 10) disable timer3
 }
 
+volatile uint32_t ADCMail;
+volatile uint32_t ADCStatus;
+
 void Timer3A_Handler(void){
   TIMER3_ICR_R = TIMER_ICR_TATOCINT;// acknowledge TIMER2A timeout
   // write this
-  
+  PF2 ^= 0x04; // Heartbeat
+  ADCMail = ADC_In(); // sample 12-bit channel 5
+  ADCStatus = 1; // set semaphore
 }
 int main(void){ // this is real lab 8 main
   // write this
   // 10 Hz sampling in Timer3 ISR
-  SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA;
-  while(!(SYSCTL_PRGPIO_R&SYSCTL_RCGC2_GPIOA)){}; // allow time for clock to start
-  Timer3A_Init(8000000, 2); // 10 Hz sampling, 80 MHz/8M = 10 Hz
+
   // main1();
   // main2();
   // main3();
   // main4();
 
+  DisableInterrupts();
+  TExaS_Init(SCOPE);
+  ST7735_InitR(INITR_REDTAB); 
+  PortF_Init();
+	PortA_Init();
+  ADC_Init();
+  ST7735_PlotClear(0,2000);
+
+  ADCMail = 0;
+  ADCStatus = 0;
+
+  Timer3A_Init(8000000, 2); // 10 Hz sampling, 80 MHz/8M = 10 Hz
+  EnableInterrupts();
+
+
 
   while(1){
     // check semaphore
     // output to LCD
+    while(ADCStatus == 0){}; // wait for ADC sample
+    Position = Convert(ADCMail); // convert ADC sample to distance
+    ADCStatus = 0; // clear semaphore
+    ST7735_SetCursor(0,0);
+    ST7735_OutUDec(ADCMail); // output ADC sample
+    ST7735_OutString("    "); // spaces cover up characters from last output
+    ST7735_SetCursor(6,0);
+    ST7735_OutFix(Position); // output distance in 0.001 cm
+    ST7735_PlotPoint(Position);
+    ST7735_PlotNextErase(); // data ploted at about 2 Hz
   }
 }
 
