@@ -40,7 +40,7 @@ void EnableInterrupts(void);  // Enable interrupts
 // Initialize Port F so PF1, PF2 and PF3 are heartbeats
 void PortF_Init(void){
   volatile int delay;
-  SYSCTL_RCGCGPIO_R |= 0x20;
+  SYSCTL_RCGC2_R |= 0x20;
   delay = SYSCTL_RCGCGPIO_R;
   GPIO_PORTF_DIR_R |= 0x0E;
   GPIO_PORTF_DEN_R |= 0x0E;
@@ -85,7 +85,8 @@ int main2(void){
 // output: integer part of distance in 0.001 resolution
 uint32_t Convert(uint32_t x){
   // write this
-  return 0;
+  // return (160*x)/4096+23; // example conversion
+  return (1500*x)/ 4096; // example conversion
 }
  
 
@@ -206,10 +207,20 @@ void Timer3A_Stop(void){
 void Timer3A_Handler(void){
   TIMER3_ICR_R = TIMER_ICR_TATOCINT;// acknowledge TIMER2A timeout
   // write this
+  
 }
 int main(void){ // this is real lab 8 main
   // write this
   // 10 Hz sampling in Timer3 ISR
+  SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA;
+  while(!(SYSCTL_PRGPIO_R&SYSCTL_RCGC2_GPIOA)){}; // allow time for clock to start
+  Timer3A_Init(8000000, 2); // 10 Hz sampling, 80 MHz/8M = 10 Hz
+  // main1();
+  // main2();
+  // main3();
+  // main4();
+
+
   while(1){
     // check semaphore
     // output to LCD

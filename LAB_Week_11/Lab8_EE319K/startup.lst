@@ -1090,11 +1090,11 @@ ARM Macro Assembler    Page 17
               00000400 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M4 --fpu=
-SoftVFP --depend=.\startup.d -o.\startup.o -I.\RTE\_Lab8 -IC:\Users\jhshi\AppDa
-ta\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -IC:\Users\jhshi\AppData\
-Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --predefine="__EVAL 
-SETA 1" --predefine="__UVISION_VERSION SETA 542" --predefine="TM4C123GH6PM SETA
- 1" --predefine="_RTE_ SETA 1" --list=.\startup.lst startup.s
+SoftVFP --depend=.\startup.d -o.\startup.o -I.\RTE\_Lab8 -IC:\Users\jhshin\AppD
+ata\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -IC:\Users\jhshin\AppDat
+a\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --predefine="__EVA
+L SETA 1" --predefine="__UVISION_VERSION SETA 542" --predefine="TM4C123GH6PM SE
+TA 1" --predefine="_RTE_ SETA 1" --list=.\startup.lst startup.s
 
 
 

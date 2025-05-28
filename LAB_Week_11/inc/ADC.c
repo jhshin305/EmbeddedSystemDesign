@@ -12,7 +12,7 @@
 // ADC initialization function using PD2 
 // Input: none
 // Output: none
-void ADC_Init(void){ 
+void ADC_Init(void){ uint32_t delay;
 // write this
   SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOD; // 1) activate clock for Port D
   while(!(SYSCTL_PRGPIO_R&SYSCTL_RCGC2_GPIOD)){}; // allow time for clock to start
@@ -21,7 +21,10 @@ void ADC_Init(void){
   GPIO_PORTD_DEN_R &= ~0x04; // 4) disable digital I/O on PD2
   GPIO_PORTD_AMSEL_R |= 0x04; // 5) enable analog function on PD2
   SYSCTL_RCGCADC_R |= 0x01; // 6) activate ADC0
-  while(!(SYSCTL_PRADC_R&0x01)){}; // allow time for ADC to start
+  delay = SYSCTL_RCGCADC_R; // allow time for clock to stabilize
+  delay = SYSCTL_RCGCADC_R; // allow time for clock to stabilize
+  delay = SYSCTL_RCGCADC_R; // allow time for clock to stabilize
+  delay = SYSCTL_RCGCADC_R; // allow time for clock to stabilize
   ADC0_PC_R = 0x01; // 7) configure for 125K samples/sec
   ADC0_SSPRI_R = 0x0123; // 8) Sequencer 3 is highest priority
   ADC0_ACTSS_R &= ~0x08; // 9) disable sample sequencer 3

@@ -143,11 +143,11 @@ ARM Macro Assembler    Page 3
                                                              aligned
    87 00000038                 END                          ; end of file
 Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M4 --fpu=
-SoftVFP --depend=.\busywait.d -o.\busywait.o -I.\RTE\_Lab8 -IC:\Users\jhshi\App
-Data\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -IC:\Users\jhshi\AppDat
-a\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --predefine="__EVA
-L SETA 1" --predefine="__UVISION_VERSION SETA 542" --predefine="TM4C123GH6PM SE
-TA 1" --predefine="_RTE_ SETA 1" --list=.\busywait.lst ..\inc\BusyWait.s
+SoftVFP --depend=.\busywait.d -o.\busywait.o -I.\RTE\_Lab8 -IC:\Users\jhshin\Ap
+pData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -IC:\Users\jhshin\AppD
+ata\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --predefine="__E
+VAL SETA 1" --predefine="__UVISION_VERSION SETA 542" --predefine="TM4C123GH6PM 
+SETA 1" --predefine="_RTE_ SETA 1" --list=.\busywait.lst ..\inc\BusyWait.s
 
 
 
