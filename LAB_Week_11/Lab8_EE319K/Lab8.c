@@ -224,11 +224,6 @@ int main(void){ // this is real lab 8 main
   // write this
   // 10 Hz sampling in Timer3 ISR
 
-  // main1();
-  // main2();
-  // main3();
-  // main4();
-
   DisableInterrupts();
   TExaS_Init(SCOPE);
   ST7735_InitR(INITR_REDTAB); 
